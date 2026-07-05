@@ -1,6 +1,6 @@
 # Skills - by [ContextJet.ai](https://www.contextjetai.com)
 
-16 original, batteries-included [Agent Skills](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview) for putting the tools in this list to work. They auto-trigger when you ask your coding agent to add tracing, cut cost, debug an agent, and so on.
+19 original, batteries-included [Agent Skills](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview) for putting the tools in this list to work. They auto-trigger when you ask your coding agent to add tracing, cut cost, debug an agent, and so on.
 
 ## Install (about 10 seconds)
 
@@ -23,9 +23,12 @@ npx degit ContextJet-ai/awesome-llm-observability/skills ~/.claude/skills
 | [`add-llm-evals`](add-llm-evals/SKILL.md) | Add an offline (CI) + online (LLM-as-a-judge) evaluation suite, with calibration. |
 | [`eval-driven-development`](eval-driven-development/SKILL.md) | Write evals first and iterate against them (TDD for LLMs). |
 | [`build-eval-dataset`](build-eval-dataset/SKILL.md) | Build an eval set that reflects production. |
+| [`optimize-prompts`](optimize-prompts/SKILL.md) | Improve a prompt systematically against an eval set. |
 | [`debug-agent-from-traces`](debug-agent-from-traces/SKILL.md) | Diagnose *why* an agent gave a wrong/empty/slow/expensive result, from its trace. |
 | [`trace-based-testing`](trace-based-testing/SKILL.md) | Turn production traces into a regression suite. |
+| [`collect-user-feedback`](collect-user-feedback/SKILL.md) | Capture feedback, attach to traces, feed back into evals. |
 | [`reduce-llm-cost`](reduce-llm-cost/SKILL.md) | Cut your LLM bill using observability data. |
+| [`add-llm-fallbacks`](add-llm-fallbacks/SKILL.md) | Timeouts, backoff, provider fallback, all observed. |
 | [`monitor-rag-quality`](monitor-rag-quality/SKILL.md) | Measure + fix RAG quality (retrieval vs generation). |
 | [`detect-hallucinations`](detect-hallucinations/SKILL.md) | Detect fabricated answers (self-consistency, semantic entropy, faithfulness). |
 | [`trace-multi-agent-system`](trace-multi-agent-system/SKILL.md) | Add observability to a multi-agent / agentic system. |
