@@ -31,6 +31,7 @@ _...plus original, ready-to-use [Agent Skills](#-skills-batteries-included) to p
 - [Self-Hosted / Open-Source First](#self-hosted--open-source-first)
 - [Research & Benchmarks](#research--benchmarks)
 - [Learning Resources](#learning-resources)
+- [Guides & Tools (Original)](#guides--tools-original)
 - [How to Choose](#how-to-choose)
 - [Contributing](#contributing)
 
@@ -51,9 +52,16 @@ Most lists stop at links. This one ships **original [Agent Skills](https://platf
 |---|---|
 | [`instrument-llm-observability`](skills/instrument-llm-observability/SKILL.md) | Add production tracing (OpenTelemetry GenAI or a platform SDK) to an LLM/agent app. |
 | [`add-llm-evals`](skills/add-llm-evals/SKILL.md) | Add an offline (CI) + online (LLM-as-a-judge) evaluation suite, with calibration. |
-| [`choose-observability-stack`](skills/choose-observability-stack/SKILL.md) | Recommend the right tool/stack for a given set of constraints (self-hosting, budget, compliance). |
+| [`debug-agent-from-traces`](skills/debug-agent-from-traces/SKILL.md) | Diagnose *why* an agent gave a wrong / empty / slow / expensive result, from its trace. |
+| [`add-llm-guardrails`](skills/add-llm-guardrails/SKILL.md) | Add input/output guardrails (prompt injection, PII, schema, safety) — and observe them. |
+| [`redact-pii-for-tracing`](skills/redact-pii-for-tracing/SKILL.md) | Add **compliant** tracing for finance/regulated apps without leaking PII. |
+| [`choose-observability-stack`](skills/choose-observability-stack/SKILL.md) | Recommend the right tool/stack for given constraints (self-hosting, budget, compliance). |
 
-→ Browse the [`skills/`](skills/) directory. Contributions of new skills welcome.
+**Also original in this repo:**
+- 📖 Guide — [**LLM Observability for Finance & Regulated Industries**](guides/llm-observability-for-finance.md)
+- 🛠️ Tool — [**`genai_trace.py`**](tools/genai_trace.py): a minimal, vendor-neutral OpenTelemetry GenAI tracer with a built-in PII-redaction hook (no-op if OTel isn't installed).
+
+→ Browse [`skills/`](skills/), [`guides/`](guides/), [`tools/`](tools/). Contributions welcome.
 
 ## Tracing & Observability Platforms
 
@@ -67,6 +75,8 @@ End-to-end tracing + dashboards for LLM/RAG/agent apps.
 | 🟢 [Microsoft PromptFlow](https://github.com/microsoft/promptflow) | 11.2k | MIT | Build, test, deploy & monitor LLM apps end-to-end. |
 | 🟢 [Arize Phoenix](https://github.com/Arize-ai/phoenix) | 10.4k | Elastic v2 | OpenTelemetry-native AI observability & evaluation; runs locally or self-hosted. |
 | 🟢 [Helicone](https://github.com/Helicone/helicone) | 5.9k | Apache-2.0 | One-line **proxy** observability — change the base URL, log every request/cost/error. |
+| 🟢 [Latitude](https://github.com/latitude-dev/latitude-llm) | 4.4k | MIT | Open-source LLM monitoring + prompt-engineering platform. |
+| 🟢 [Laminar](https://github.com/lmnr-ai/lmnr) | 3.0k | Apache-2.0 | Open-source observability + evals, purpose-built for AI agents. |
 | 🟢 [LangWatch](https://github.com/langwatch/langwatch) | 3.3k | Apache-2.0 | Evals + agent testing + observability platform. |
 | 🟢 [OpenLIT](https://github.com/openlit/openlit) | 2.6k | Apache-2.0 | OTel-native LLM observability with GPU monitoring, guardrails & evals. |
 | 🟢 [Langtrace](https://github.com/Scale3-Labs/langtrace) | 1.2k | AGPL-3.0 | OpenTelemetry-based end-to-end LLM app observability. |
@@ -133,6 +143,7 @@ The observability layer is standardizing on **OpenTelemetry** — emit these and
 | 🟢 [OpenInference](https://github.com/Arize-ai/openinference) | 1.1k | Apache-2.0 | OpenTelemetry instrumentation for AI observability (Arize). |
 | 🟢 [OTel Python Contrib](https://github.com/open-telemetry/opentelemetry-python-contrib) | 1.1k | Apache-2.0 | OTel instrumentation modules, including GenAI. |
 | 🟢 [OTel Semantic Conventions](https://github.com/open-telemetry/semantic-conventions) | 0.6k | Apache-2.0 | Home of the **GenAI semantic conventions** spec (`gen_ai.*`). |
+| 🟢 [WhyLabs LangKit](https://github.com/whylabs/langkit) | 1.0k | Apache-2.0 | Extract telemetry/metrics (quality, sentiment, injection signals) from prompts & responses. |
 
 ## Guardrails & Safety Monitoring
 
@@ -163,6 +174,14 @@ The tooling above is grounded in a fast-moving literature. Key anchors:
 - [Arize Phoenix docs](https://docs.arize.com/phoenix) & [Langfuse docs](https://langfuse.com/docs) — practical tracing/eval concepts.
 - Hamel Husain — [*Your AI Product Needs Evals*](https://hamel.dev/blog/posts/evals/).
 - Chip Huyen — [*Building LLM applications for production*](https://huyenchip.com/2023/04/11/llm-engineering.html).
+
+## Guides & Tools (Original)
+
+Original work in this repo, not just curated links:
+
+- 🧰 **[Agent Skills](skills/)** — 6 ready-to-run workflows (instrument, evals, debug-from-traces, guardrails, PII-safe tracing, tool selection).
+- 📖 **[LLM Observability for Finance & Regulated Industries](guides/llm-observability-for-finance.md)** — a guide for teams where observability is a *compliance control*, not a dashboard.
+- 🛠️ **[](tools/genai_trace.py)** — a minimal vendor-neutral OpenTelemetry GenAI tracer with a PII-redaction hook.
 
 ## How to Choose
 
