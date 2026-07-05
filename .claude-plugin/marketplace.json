@@ -8,7 +8,7 @@
     {
       "name": "llm-observability",
       "source": "./",
-      "description": "13 ready-to-use skills for LLM observability: instrument tracing, evals, eval-driven dev, debug from traces, reduce cost, RAG quality, hallucination detection, multi-agent tracing, guardrails, red-teaming, drift alerts, PII-safe tracing, and tool selection.",
+      "description": "16 ready-to-use skills for LLM observability: instrument tracing, evals, eval datasets, eval-driven dev, trace-based testing, debug from traces, reduce cost, RAG quality, hallucination detection, model comparison, multi-agent tracing, guardrails, red-teaming, drift alerts, PII-safe tracing, and tool selection.",
       "version": "1.0.0"
     }
   ]

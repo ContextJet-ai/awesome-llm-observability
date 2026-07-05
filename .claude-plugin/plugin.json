@@ -1,7 +1,7 @@
 {
   "name": "llm-observability",
   "version": "1.0.0",
-  "description": "13 Agent Skills for instrumenting, evaluating, debugging, securing, and monitoring LLM & AI-agent apps. Turns any coding agent into an LLM-observability specialist.",
+  "description": "16 Agent Skills for instrumenting, evaluating, debugging, securing, and monitoring LLM & AI-agent apps. Turns any coding agent into an LLM-observability specialist.",
   "author": {
     "name": "ContextJet.ai",
     "url": "https://www.contextjetai.com"
