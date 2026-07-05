@@ -4,7 +4,7 @@
 
 **Two things in one repo:**
 
-**① A curated list** of 48+ verified tools for tracing, evaluating, and monitoring LLM & AI-agent apps.
+**① A curated list** of 50+ verified tools for tracing, evaluating, and monitoring LLM & AI-agent apps.
 **② A pack of 22 [Agent Skills](#-skills-batteries-included)** that turn your coding agent into an LLM-observability specialist: instrument tracing, add evals, debug agents, cut cost, detect hallucinations, and secure your app. One command to install.
 
 [![13 Agent Skills](https://img.shields.io/badge/🧰_Agent_Skills-22-1f6feb)](#-skills-batteries-included)
@@ -145,6 +145,7 @@ End-to-end tracing + dashboards for LLM/RAG/agent apps.
 | 🟠 [LangSmith](https://github.com/langchain-ai/langsmith-sdk) | 0.9k (SDK) | MIT (SDK) | Tracing/eval platform from LangChain; SDK is OSS, backend commercial. |
 | 🟠 [Datadog LLM Observability](https://github.com/DataDog/dd-trace-py) | 0.6k (tracer) | BSD-3 | LLM Observability product on top of Datadog APM. |
 | 🟠 [New Relic AI Monitoring](https://github.com/newrelic/newrelic-python-agent) | 0.2k (agent) | Apache-2.0 | AI monitoring integrated into New Relic's agent. |
+| 🟠 [Azure Monitor / App Insights](https://learn.microsoft.com/azure/azure-monitor/app/opentelemetry-enable) | SDK | MIT (SDK) | OpenTelemetry-native APM with GenAI + agent-trace visualization; the observability backend under Azure AI Foundry. |
 | 🟠 [Literal AI](https://github.com/Chainlit/literalai-python) | SDK | Apache-2.0 | Observability/eval platform from the Chainlit team. |
 | 🟠 [Lunary](https://github.com/lunary-ai/lunary-py) | SDK | Apache-2.0 | Analytics, monitoring & evals for GenAI apps (open-core). |
 | 🟠 [Parea AI](https://github.com/parea-ai/parea-sdk-py) | SDK | Apache-2.0 | Experiment, test, evaluate & monitor LLM apps (YC S23). |
@@ -170,6 +171,7 @@ Test and score LLM/agent output - in CI (offline) and in production (online).
 | 🟢 [DeepTeam](https://github.com/confident-ai/deepteam) | 1.9k | Apache-2.0 | Red-teaming framework for LLMs & agents (by the DeepEval team). |
 | 🟢 [OpenEvals](https://github.com/langchain-ai/openevals) | 1.1k | MIT | Ready-made evaluators for LLM apps. |
 | 🟠 [Braintrust](https://github.com/braintrustdata/braintrust-sdk-python) | SDK | Apache-2.0 | Tracing + prompt-centric evals; SDK OSS, platform commercial. |
+| 🟠 [Azure AI Evaluation (Foundry)](https://github.com/Azure/azure-sdk-for-python/tree/main/sdk/evaluation/azure-ai-evaluation) | SDK | MIT | Microsoft Foundry's evaluation SDK: built-in quality + safety/risk evaluators; runs locally or in Foundry. |
 | 🟠 [Athina](https://github.com/athina-ai/athina-evals) | 0.3k | - | Python SDK for running evals on LLM responses. |
 
 ## Prompt Management & Experimentation
