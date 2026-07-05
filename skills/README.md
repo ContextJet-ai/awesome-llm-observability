@@ -1,6 +1,6 @@
 # Skills - by [ContextJet.ai](https://www.contextjetai.com)
 
-10 original, batteries-included [Agent Skills](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview) for putting the tools in this list to work. They auto-trigger when you ask your coding agent to add tracing, cut cost, debug an agent, and so on.
+13 original, batteries-included [Agent Skills](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview) for putting the tools in this list to work. They auto-trigger when you ask your coding agent to add tracing, cut cost, debug an agent, and so on.
 
 ## Install (about 10 seconds)
 
@@ -25,8 +25,11 @@ npx degit ContextJet-ai/awesome-llm-observability/skills ~/.claude/skills
 | [`debug-agent-from-traces`](debug-agent-from-traces/SKILL.md) | Diagnose *why* an agent gave a wrong/empty/slow/expensive result, from its trace. |
 | [`reduce-llm-cost`](reduce-llm-cost/SKILL.md) | Cut your LLM bill using observability data. |
 | [`monitor-rag-quality`](monitor-rag-quality/SKILL.md) | Measure + fix RAG quality (retrieval vs generation). |
+| [`detect-hallucinations`](detect-hallucinations/SKILL.md) | Detect fabricated answers (self-consistency, semantic entropy, faithfulness). |
 | [`trace-multi-agent-system`](trace-multi-agent-system/SKILL.md) | Add observability to a multi-agent / agentic system. |
+| [`set-up-drift-alerts`](set-up-drift-alerts/SKILL.md) | Catch quality/cost/latency/input drift in production. |
 | [`add-llm-guardrails`](add-llm-guardrails/SKILL.md) | Add input/output guardrails (injection, PII, schema, safety) and observe them. |
+| [`red-team-llm-app`](red-team-llm-app/SKILL.md) | Adversarially test for injection, jailbreaks & tool misuse (OWASP LLM Top 10). |
 | [`redact-pii-for-tracing`](redact-pii-for-tracing/SKILL.md) | Compliant tracing for finance/regulated apps without leaking PII. |
 | [`choose-observability-stack`](choose-observability-stack/SKILL.md) | Recommend the right tool for a given set of constraints. |
 
