@@ -5,9 +5,9 @@
 **Two things in one repo:**
 
 **① A curated list** of 48+ verified tools for tracing, evaluating, and monitoring LLM & AI-agent apps.
-**② A pack of 19 [Agent Skills](#-skills-batteries-included)** that turn your coding agent into an LLM-observability specialist: instrument tracing, add evals, debug agents, cut cost, detect hallucinations, and secure your app. One command to install.
+**② A pack of 22 [Agent Skills](#-skills-batteries-included)** that turn your coding agent into an LLM-observability specialist: instrument tracing, add evals, debug agents, cut cost, detect hallucinations, and secure your app. One command to install.
 
-[![13 Agent Skills](https://img.shields.io/badge/🧰_Agent_Skills-19-1f6feb)](#-skills-batteries-included)
+[![13 Agent Skills](https://img.shields.io/badge/🧰_Agent_Skills-22-1f6feb)](#-skills-batteries-included)
 [![Install](https://img.shields.io/badge/install-1_command-brightgreen)](#-skills-batteries-included)
 [![Awesome](https://img.shields.io/badge/Awesome-list-blueviolet)](https://awesome.re)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
@@ -52,7 +52,7 @@ Traditional observability assumes deterministic systems. LLM apps are **non-dete
 
 ## 🧰 Skills (Batteries Included)
 
-Most lists stop at links. This one ships **19 original [Agent Skills](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview)** (by [ContextJet.ai](https://www.contextjetai.com)) that turn the tools below into working setups. They auto-trigger when you ask your coding agent things like "add tracing", "reduce my LLM bill", or "debug my agent". Authored to Anthropic's skill best-practices (focused `SKILL.md`, progressive disclosure, actionable checklists).
+Most lists stop at links. This one ships **22 original [Agent Skills](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview)** (by [ContextJet.ai](https://www.contextjetai.com)) that turn the tools below into working setups. They auto-trigger when you ask your coding agent things like "add tracing", "reduce my LLM bill", or "debug my agent". Authored to Anthropic's skill best-practices (focused `SKILL.md`, progressive disclosure, actionable checklists).
 
 ### Install (about 10 seconds)
 
@@ -85,12 +85,15 @@ git clone https://github.com/ContextJet-ai/awesome-llm-observability
 | [`debug-agent-from-traces`](skills/debug-agent-from-traces/SKILL.md) | Diagnose *why* an agent gave a wrong / empty / slow / expensive result, from its trace. |
 | [`trace-based-testing`](skills/trace-based-testing/SKILL.md) | Turn real production traces into a regression suite so bugs never come back. |
 | [`collect-user-feedback`](skills/collect-user-feedback/SKILL.md) | Capture thumbs/edits/implicit signals, attach to traces, feed back into evals. |
+| [`annotate-traces-for-review`](skills/annotate-traces-for-review/SKILL.md) | Human review + error analysis of traces to build golden data and calibrate judges. |
 | [`reduce-llm-cost`](skills/reduce-llm-cost/SKILL.md) | Cut your LLM bill using observability data (find the expensive spans first). |
 | [`add-llm-fallbacks`](skills/add-llm-fallbacks/SKILL.md) | Make LLM calls resilient: timeouts, backoff, provider fallback, all observed. |
 | [`monitor-rag-quality`](skills/monitor-rag-quality/SKILL.md) | Measure + fix RAG quality, telling retrieval bugs from generation bugs. |
 | [`detect-hallucinations`](skills/detect-hallucinations/SKILL.md) | Detect when the model is making things up (self-consistency, semantic entropy, faithfulness). |
 | [`trace-multi-agent-system`](skills/trace-multi-agent-system/SKILL.md) | Add observability to a multi-agent / agentic system (who did what, handoffs, loops). |
+| [`measure-agent-task-success`](skills/measure-agent-task-success/SKILL.md) | Measure whether an agent actually completed the task end to end, not just per-call quality. |
 | [`set-up-drift-alerts`](skills/set-up-drift-alerts/SKILL.md) | Catch quality / cost / latency / input drift in production before your users do. |
+| [`set-up-ab-testing`](skills/set-up-ab-testing/SKILL.md) | Test a prompt/model change on real traffic (canary/A-B) before rolling it out to everyone. |
 | [`add-llm-guardrails`](skills/add-llm-guardrails/SKILL.md) | Add input/output guardrails (injection, PII, schema, safety) and observe them. |
 | [`red-team-llm-app`](skills/red-team-llm-app/SKILL.md) | Adversarially test for prompt injection, jailbreaks & tool misuse (OWASP LLM Top 10). |
 | [`compare-llm-models`](skills/compare-llm-models/SKILL.md) | Pick or switch the model on evidence (your eval set), not leaderboards or hype. |
@@ -237,7 +240,7 @@ The tooling above is grounded in a fast-moving literature. Key anchors:
 
 Original work in this repo, not just curated links:
 
-- 🧰 **[Agent Skills](skills/)** - 19 ready-to-run workflows (instrument, evals, debug-from-traces, guardrails, PII-safe tracing, tool selection).
+- 🧰 **[Agent Skills](skills/)** - 22 ready-to-run workflows (instrument, evals, debug-from-traces, guardrails, PII-safe tracing, tool selection).
 - 📖 **[LLM Observability for Finance & Regulated Industries](guides/llm-observability-for-finance.md)** - a guide for teams where observability is a *compliance control*, not a dashboard.
 - 🛠️ **[](tools/genai_trace.py)** - a minimal vendor-neutral OpenTelemetry GenAI tracer with a PII-redaction hook.
 

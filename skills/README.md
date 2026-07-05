@@ -1,6 +1,6 @@
 # Skills - by [ContextJet.ai](https://www.contextjetai.com)
 
-19 original, batteries-included [Agent Skills](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview) for putting the tools in this list to work. They auto-trigger when you ask your coding agent to add tracing, cut cost, debug an agent, and so on.
+22 original, batteries-included [Agent Skills](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview) for putting the tools in this list to work. They auto-trigger when you ask your coding agent to add tracing, cut cost, debug an agent, and so on.
 
 ## Install (about 10 seconds)
 
@@ -27,12 +27,15 @@ npx degit ContextJet-ai/awesome-llm-observability/skills ~/.claude/skills
 | [`debug-agent-from-traces`](debug-agent-from-traces/SKILL.md) | Diagnose *why* an agent gave a wrong/empty/slow/expensive result, from its trace. |
 | [`trace-based-testing`](trace-based-testing/SKILL.md) | Turn production traces into a regression suite. |
 | [`collect-user-feedback`](collect-user-feedback/SKILL.md) | Capture feedback, attach to traces, feed back into evals. |
+| [`annotate-traces-for-review`](annotate-traces-for-review/SKILL.md) | Human review + error analysis of traces. |
 | [`reduce-llm-cost`](reduce-llm-cost/SKILL.md) | Cut your LLM bill using observability data. |
 | [`add-llm-fallbacks`](add-llm-fallbacks/SKILL.md) | Timeouts, backoff, provider fallback, all observed. |
 | [`monitor-rag-quality`](monitor-rag-quality/SKILL.md) | Measure + fix RAG quality (retrieval vs generation). |
 | [`detect-hallucinations`](detect-hallucinations/SKILL.md) | Detect fabricated answers (self-consistency, semantic entropy, faithfulness). |
 | [`trace-multi-agent-system`](trace-multi-agent-system/SKILL.md) | Add observability to a multi-agent / agentic system. |
+| [`measure-agent-task-success`](measure-agent-task-success/SKILL.md) | Measure whether an agent completed the task end to end. |
 | [`set-up-drift-alerts`](set-up-drift-alerts/SKILL.md) | Catch quality/cost/latency/input drift in production. |
+| [`set-up-ab-testing`](set-up-ab-testing/SKILL.md) | Canary/A-B a prompt/model change on real traffic. |
 | [`add-llm-guardrails`](add-llm-guardrails/SKILL.md) | Add input/output guardrails (injection, PII, schema, safety) and observe them. |
 | [`red-team-llm-app`](red-team-llm-app/SKILL.md) | Adversarially test for injection, jailbreaks & tool misuse (OWASP LLM Top 10). |
 | [`compare-llm-models`](compare-llm-models/SKILL.md) | Pick/switch models on evidence (your eval set), not leaderboards. |

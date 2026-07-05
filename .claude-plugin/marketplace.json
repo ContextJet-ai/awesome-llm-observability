@@ -8,7 +8,7 @@
     {
       "name": "llm-observability",
       "source": "./",
-      "description": "19 ready-to-use skills for LLM observability across the full lifecycle: instrument, eval datasets, evals, eval-driven dev, prompt optimization, trace-based testing, user feedback, debug, reduce cost, resilience/fallbacks, RAG quality, hallucination detection, model comparison, multi-agent tracing, guardrails, red-teaming, drift alerts, PII-safe tracing, tool selection.",
+      "description": "22 ready-to-use skills covering the full LLM app lifecycle: build eval datasets, instrument, evaluate, optimize prompts, A/B test, human review, trace-based testing, user feedback, debug, reduce cost, resilience, RAG quality, hallucination detection, model comparison, agent success, multi-agent tracing, guardrails, red-teaming, drift alerts, PII-safe tracing, and tool selection.",
       "version": "1.0.0"
     }
   ]
