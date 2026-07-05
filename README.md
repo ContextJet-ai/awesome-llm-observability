@@ -4,6 +4,13 @@
 
 **A curated list of tools, frameworks, standards, and research for tracing, evaluating, and monitoring LLM & AI-agent applications in production.**
 
+_...plus original, ready-to-use [Agent Skills](#-skills-batteries-included) to put them to work._
+
+[![Awesome](https://img.shields.io/badge/Awesome-list-blueviolet)](https://awesome.re)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
+[![License: CC0](https://img.shields.io/badge/License-CC0_1.0-lightgrey.svg)](LICENSE)
+[![Maintained by ContextJet.ai](https://img.shields.io/badge/curated_by-ContextJet.ai-1f6feb)](https://www.contextjetai.com)
+
 </div>
 
 > [!NOTE]
@@ -14,6 +21,7 @@
 ## Contents
 
 - [What is LLM Observability?](#what-is-llm-observability)
+- [🧰 Skills (Batteries Included)](#-skills-batteries-included)
 - [Tracing & Observability Platforms](#tracing--observability-platforms)
 - [Evaluation Frameworks](#evaluation-frameworks)
 - [Prompt Management & Experimentation](#prompt-management--experimentation)
@@ -34,6 +42,18 @@ Traditional observability assumes deterministic systems. LLM apps are **non-dete
 - **Evaluation** — score output quality (correctness, faithfulness, relevance, safety), offline and online, often via **LLM-as-a-judge** and reference-based metrics.
 - **Monitoring** — dashboards + alerts on latency, cost, error rate, hallucination/quality scores, and drift over time.
 - **Prompt & dataset management** — version prompts, curate eval datasets, and close the feedback loop from production back into tests.
+
+## 🧰 Skills (Batteries Included)
+
+Most lists stop at links. This one ships **original [Agent Skills](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview)** (by [ContextJet.ai](https://www.contextjetai.com)) that turn the tools below into working setups — drop a folder into your coding agent's skills directory (e.g. `.claude/skills/`) and it gains the workflow. Authored to Anthropic's skill best-practices (focused `SKILL.md`, progressive disclosure, actionable checklists).
+
+| Skill | Use it to… |
+|---|---|
+| [`instrument-llm-observability`](skills/instrument-llm-observability/SKILL.md) | Add production tracing (OpenTelemetry GenAI or a platform SDK) to an LLM/agent app. |
+| [`add-llm-evals`](skills/add-llm-evals/SKILL.md) | Add an offline (CI) + online (LLM-as-a-judge) evaluation suite, with calibration. |
+| [`choose-observability-stack`](skills/choose-observability-stack/SKILL.md) | Recommend the right tool/stack for a given set of constraints (self-hosting, budget, compliance). |
+
+→ Browse the [`skills/`](skills/) directory. Contributions of new skills welcome.
 
 ## Tracing & Observability Platforms
 
