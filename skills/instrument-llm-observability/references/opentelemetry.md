@@ -1,4 +1,4 @@
-# OpenTelemetry GenAI — span attributes & init
+# OpenTelemetry GenAI - span attributes & init
 
 ## Key `gen_ai.*` semantic-convention attributes
 
@@ -14,7 +14,7 @@ Set these on LLM spans so any OTel backend understands them:
 | `gen_ai.usage.output_tokens` | `126` | Completion tokens |
 | `gen_ai.request.temperature` | `0.2` | Sampling params |
 
-Prompts/completions are recorded as span events (`gen_ai.content.prompt` / `gen_ai.content.completion`) — gate these behind a flag and redact PII before enabling in production.
+Prompts/completions are recorded as span events (`gen_ai.content.prompt` / `gen_ai.content.completion`) - gate these behind a flag and redact PII before enabling in production.
 
 ## Minimal init (OpenLLMetry / Traceloop)
 
@@ -36,4 +36,4 @@ with tracer.start_as_current_span("retrieve") as span:
     span.set_attribute("retrieval.doc_count", len(docs))
 ```
 
-Reference: OpenTelemetry GenAI semantic conventions — https://opentelemetry.io/docs/specs/semconv/gen-ai/
+Reference: OpenTelemetry GenAI semantic conventions - https://opentelemetry.io/docs/specs/semconv/gen-ai/

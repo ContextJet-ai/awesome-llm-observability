@@ -1,6 +1,6 @@
 ---
 name: instrument-llm-observability
-description: Use this when adding tracing/observability to an LLM or AI-agent application — capturing prompts, tool calls, token usage, latency, and cost per step. Trigger whenever someone wants to "add tracing", "instrument", "monitor", "see what my agent is doing", or debug an LLM app in production. Prefer vendor-neutral OpenTelemetry unless a specific platform is already in use.
+description: Use this when adding tracing/observability to an LLM or AI-agent application - capturing prompts, tool calls, token usage, latency, and cost per step. Trigger whenever someone wants to "add tracing", "instrument", "monitor", "see what my agent is doing", or debug an LLM app in production. Prefer vendor-neutral OpenTelemetry unless a specific platform is already in use.
 license: CC0-1.0
 ---
 
@@ -17,7 +17,7 @@ Add production-grade tracing to an LLM/agent app so every run is inspectable: pr
 
 Emit `gen_ai.*` spans via an OTel instrumentation library, then point at any collector.
 
-- Use **OpenLLMetry** (`traceloop-sdk`) or **OpenInference** (Arize) — both emit OTel-compatible LLM spans.
+- Use **OpenLLMetry** (`traceloop-sdk`) or **OpenInference** (Arize) - both emit OTel-compatible LLM spans.
 - Minimal shape:
   1. Install the instrumentation lib + an OTLP exporter.
   2. Initialize once at startup (set service name + OTLP endpoint via `OTEL_EXPORTER_OTLP_ENDPOINT`).
@@ -36,19 +36,19 @@ Wrap the LLM client with the platform's tracer (e.g. `track_openai(...)`, `@obse
 - [ ] Tool/function calls: name, args, result, error.
 - [ ] Retrieval steps (RAG): query, retrieved doc IDs/scores.
 - [ ] Agent/chain boundaries: one parent span per user request, child spans per step.
-- [ ] Errors: record exceptions on the span (don't swallow them — a silent `except` that returns empty output hides the failure).
+- [ ] Errors: record exceptions on the span (don't swallow them - a silent `except` that returns empty output hides the failure).
 - [ ] Cost: derive from token counts × model price (most platforms do this for you).
 
 ## Verify
 
-Run one representative request and confirm the trace tree shows the full chain (parent → LLM/tool/retrieval children) with tokens + latency populated. If spans are missing, the instrumentation isn't wrapping that code path — instrument it manually.
+Run one representative request and confirm the trace tree shows the full chain (parent → LLM/tool/retrieval children) with tokens + latency populated. If spans are missing, the instrumentation isn't wrapping that code path - instrument it manually.
 
 ## Anti-patterns
 
 - Logging raw prints instead of structured spans (no trace tree, no cost rollup).
 - Instrumenting only the top-level call, missing tool/retrieval steps (the interesting failures hide there).
 - Hard-coding a vendor SDK when OTel would keep you portable.
-- Sending full prompts/PII to a third-party backend without redaction — mask sensitive fields first.
+- Sending full prompts/PII to a third-party backend without redaction - mask sensitive fields first.
 
 ## Tool picker
 

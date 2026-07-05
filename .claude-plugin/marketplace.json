@@ -1,0 +1,15 @@
+{
+  "name": "contextjet",
+  "owner": {
+    "name": "ContextJet.ai",
+    "url": "https://www.contextjetai.com"
+  },
+  "plugins": [
+    {
+      "name": "llm-observability",
+      "source": "./",
+      "description": "10 ready-to-use skills for LLM observability: instrument tracing, add evals, eval-driven development, debug from traces, reduce cost, RAG quality, multi-agent tracing, guardrails, PII-safe tracing, and tool selection.",
+      "version": "1.0.0"
+    }
+  ]
+}

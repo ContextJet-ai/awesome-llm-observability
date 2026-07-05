@@ -1,12 +1,12 @@
 ---
 name: choose-observability-stack
-description: Use this to recommend an LLM observability / evaluation tool or stack for a specific situation. Trigger on "which observability tool should I use", "compare Langfuse vs Phoenix vs LangSmith", "what's the best LLM monitoring for us", or picking an eval/tracing/gateway tool given constraints (self-hosting, budget, compliance, existing stack). Ask about constraints, then recommend from the curated list — don't just name the most popular tool.
+description: Use this to recommend an LLM observability / evaluation tool or stack for a specific situation. Trigger on "which observability tool should I use", "compare Langfuse vs Phoenix vs LangSmith", "what's the best LLM monitoring for us", or picking an eval/tracing/gateway tool given constraints (self-hosting, budget, compliance, existing stack). Ask about constraints, then recommend from the curated list - don't just name the most popular tool.
 license: CC0-1.0
 ---
 
 # Choose an LLM observability stack
 
-There's no single best tool — the right choice depends on constraints. Gather them, then map to a recommendation. Base recommendations on this repo's curated list (verified tools + licenses), not on hype.
+There's no single best tool - the right choice depends on constraints. Gather them, then map to a recommendation. Base recommendations on this repo's curated list (verified tools + licenses), not on hype.
 
 ## Ask these constraints first
 
@@ -39,4 +39,4 @@ A gateway (cost + routing) **+** an evaluation framework (quality) **+** an OTel
 
 ## Anti-pattern
 
-Recommending the highest-star tool by default. LiteLLM has the most stars but is a *gateway* — it's the wrong answer for someone who asked for an *evaluation* framework. Match the tool category to the stated need.
+Recommending the highest-star tool by default. LiteLLM has the most stars but is a *gateway* - it's the wrong answer for someone who asked for an *evaluation* framework. Match the tool category to the stated need.

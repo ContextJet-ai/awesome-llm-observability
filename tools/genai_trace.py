@@ -1,13 +1,13 @@
 """
-genai_trace — a minimal, vendor-neutral OpenTelemetry GenAI tracer.
+genai_trace - a minimal, vendor-neutral OpenTelemetry GenAI tracer.
 
 Drop-in tracing for LLM calls using the OpenTelemetry GenAI semantic conventions
 (``gen_ai.*``), so spans export to *any* OTel backend (Langfuse, Phoenix, Opik,
 Datadog, Grafana, …). Includes an optional redaction hook so prompts/completions
-can be masked before they leave the process — important for finance / regulated
+can be masked before they leave the process - important for finance / regulated
 data. No hard dependency: if OpenTelemetry isn't installed, it degrades to a no-op.
 
-Original work by ContextJet.ai — CC0.
+Original work by ContextJet.ai - CC0.
 
 Usage
 -----
@@ -106,7 +106,7 @@ def trace_llm(
         started = time.time()
         try:
             yield llm
-        except Exception as exc:  # record and re-raise — never swallow
+        except Exception as exc:  # record and re-raise - never swallow
             raw.record_exception(exc)
             raise
         finally:
@@ -117,7 +117,7 @@ def mask_common_pii(text: str) -> str:
     """A conservative example redactor (emails, cards, SSN-like, long digit runs).
 
     For production / finance, use a real detector (Presidio, LLM Guard) plus a
-    domain ruleset — this is a safe default, not a complete solution.
+    domain ruleset - this is a safe default, not a complete solution.
     """
     import re
 

@@ -6,7 +6,7 @@ license: CC0-1.0
 
 # Debug an agent from its trace
 
-A trace is a tree of spans (parent request → LLM/tool/retrieval children). Most agent failures are visible in it if you read it in the right order. Don't guess from the final output — walk the tree.
+A trace is a tree of spans (parent request → LLM/tool/retrieval children). Most agent failures are visible in it if you read it in the right order. Don't guess from the final output - walk the tree.
 
 ## Triage by symptom
 
@@ -14,9 +14,9 @@ A trace is a tree of spans (parent request → LLM/tool/retrieval children). Mos
 |---|---|
 | **Wrong answer** | The LLM span *just before* the bad output: was the prompt/context correct? Then the retrieval span that fed it. |
 | **Empty / truncated output** | `finish_reason` (length? content_filter?), `max_tokens`, and any span that raised an exception then got swallowed. |
-| **Hallucinated facts** | Retrieval spans — were the right docs retrieved (check scores/IDs)? If not, it's a retrieval bug, not an LLM bug. |
-| **Too slow** | Span durations — find the critical path. Usually one slow retrieval, a serial loop that should be parallel, or a huge context. |
-| **Too expensive** | Token counts per LLM span — find the span with the largest `input_tokens` (usually bloated context or a retry storm). |
+| **Hallucinated facts** | Retrieval spans - were the right docs retrieved (check scores/IDs)? If not, it's a retrieval bug, not an LLM bug. |
+| **Too slow** | Span durations - find the critical path. Usually one slow retrieval, a serial loop that should be parallel, or a huge context. |
+| **Too expensive** | Token counts per LLM span - find the span with the largest `input_tokens` (usually bloated context or a retry storm). |
 | **Silent failure** | A span with an error/exception that was caught and returned empty. A missing subtree = a step that never ran. |
 
 ## The systematic walk
@@ -24,7 +24,7 @@ A trace is a tree of spans (parent request → LLM/tool/retrieval children). Mos
 1. **Start at the root**, confirm the user input is what you expect.
 2. **Follow to the first LLM call.** Read the *actual* rendered prompt + context (not the template). Most "model is dumb" bugs are actually "we fed it the wrong context".
 3. **Check each tool/retrieval span** in order: inputs correct? output sane? error?
-4. **Find the divergence point** — the first span where reality differs from intent. Fix *there*, not at the output.
+4. **Find the divergence point** - the first span where reality differs from intent. Fix *there*, not at the output.
 5. **Check token + latency** on every LLM span to catch cost/perf issues even when the answer is right.
 
 ## Common root causes (in order of frequency)
