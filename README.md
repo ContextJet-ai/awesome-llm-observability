@@ -7,7 +7,7 @@
 **① A curated list** of 50+ verified tools for tracing, evaluating, and monitoring LLM & AI-agent apps.
 **② A pack of 26 [Agent Skills](#-skills-batteries-included)** that turn your coding agent into an LLM-observability specialist: instrument tracing, add evals, debug agents, cut cost, detect hallucinations, and secure your app. One command to install.
 
-[![13 Agent Skills](https://img.shields.io/badge/🧰_Agent_Skills-26-1f6feb)](#-skills-batteries-included)
+[![26 Agent Skills](https://img.shields.io/badge/🧰_Agent_Skills-26-1f6feb)](#-skills-batteries-included)
 [![Install](https://img.shields.io/badge/install-1_command-brightgreen)](#-skills-batteries-included)
 [![tests](https://github.com/ContextJet-ai/awesome-llm-observability/actions/workflows/tests.yml/badge.svg)](https://github.com/ContextJet-ai/awesome-llm-observability/actions/workflows/tests.yml)
 [![Awesome](https://img.shields.io/badge/Awesome-list-blueviolet)](https://awesome.re)
