@@ -11,6 +11,7 @@ for d in "$SRC"/*/; do
   name="$(basename "$d")"
   rm -rf "$DEST/$name"
   cp -R "$d" "$DEST/$name"
+  find "$DEST/$name" -name __pycache__ -type d -prune -exec rm -rf {} + 2>/dev/null || true
   echo "  ✓ installed: $name"
   count=$((count+1))
 done
