@@ -22,6 +22,7 @@ _...plus original, ready-to-use [Agent Skills](#-skills-batteries-included) to p
 
 - [What is LLM Observability?](#what-is-llm-observability)
 - [🧰 Skills (Batteries Included)](#-skills-batteries-included)
+- [Platform Comparison (At a Glance)](#platform-comparison-at-a-glance)
 - [Tracing & Observability Platforms](#tracing--observability-platforms)
 - [Evaluation Frameworks](#evaluation-frameworks)
 - [Prompt Management & Experimentation](#prompt-management--experimentation)
@@ -36,6 +37,8 @@ _...plus original, ready-to-use [Agent Skills](#-skills-batteries-included) to p
 - [Contributing](#contributing)
 
 ## What is LLM Observability?
+
+**LLM observability** — also called **LLMOps observability**, **AI observability**, or **LLM monitoring** — is the practice of tracing, evaluating, and monitoring large language model and AI-agent applications in production.
 
 Traditional observability assumes deterministic systems. LLM apps are **non-deterministic, token-metered, and failure-rich** — they hallucinate, drift, run up cost, and fail silently. LLM observability adds the missing pillars:
 
@@ -62,6 +65,24 @@ Most lists stop at links. This one ships **original [Agent Skills](https://platf
 - 🛠️ Tool — [**`genai_trace.py`**](tools/genai_trace.py): a minimal, vendor-neutral OpenTelemetry GenAI tracer with a built-in PII-redaction hook (no-op if OTel isn't installed).
 
 → Browse [`skills/`](skills/), [`guides/`](guides/), [`tools/`](tools/). Contributions welcome.
+
+## Platform Comparison (At a Glance)
+
+A quick orientation for the most common question — _"Langfuse vs Phoenix vs LangSmith vs Opik vs Helicone…?"_ Pick by your hard constraints (self-hosting, license) first. Verify specifics against current docs.
+
+| Platform | Self-host | License | Tracing | Evals | Prompt Mgmt | OTel-native |
+|---|:--:|---|:--:|:--:|:--:|:--:|
+| [Langfuse](https://github.com/langfuse/langfuse) | ✅ | MIT | ✅ | ✅ | ✅ | ✅ |
+| [Arize Phoenix](https://github.com/Arize-ai/phoenix) | ✅ | Elastic v2 | ✅ | ✅ | ➖ | ✅ |
+| [Comet Opik](https://github.com/comet-ml/opik) | ✅ | Apache-2.0 | ✅ | ✅ | ✅ | ➖ |
+| [LangSmith](https://github.com/langchain-ai/langsmith-sdk) | ➖ SaaS | Commercial | ✅ | ✅ | ✅ | ➖ |
+| [Helicone](https://github.com/Helicone/helicone) | ✅ | Apache-2.0 | ✅ | ➖ | ✅ | ➖ |
+| [Latitude](https://github.com/latitude-dev/latitude-llm) | ✅ | MIT | ✅ | ✅ | ✅ | ➖ |
+| [Laminar](https://github.com/lmnr-ai/lmnr) | ✅ | Apache-2.0 | ✅ | ✅ | ➖ | ✅ |
+| [MLflow](https://github.com/mlflow/mlflow) | ✅ | Apache-2.0 | ✅ | ✅ | ➖ | ➖ |
+| [OpenLIT](https://github.com/openlit/openlit) | ✅ | Apache-2.0 | ✅ | ✅ | ➖ | ✅ |
+
+✅ first-class · ➖ limited/not the focus. Need help deciding? Use the [`choose-observability-stack`](skills/choose-observability-stack/SKILL.md) skill.
 
 ## Tracing & Observability Platforms
 
