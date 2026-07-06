@@ -167,7 +167,7 @@ End-to-end tracing + dashboards for LLM/RAG/agent apps.
 
 ## Evaluation Frameworks
 
-Test and score LLM/agent output - in CI (offline) and in production (online).
+Test and score LLM/agent output. One thing to sort out before you pick a tool: are you doing **offline/batch** evals (run over a dataset in CI to optimize a prompt) or **inline** evals (score a response live, to gate or block it before it reaches the user)? They're pretty different jobs. Most of the frameworks below are built for the offline case. Live gating usually lands in the [guardrails](#guardrails--safety-monitoring) tools or a platform's online-scoring feature.
 
 | Tool | ⭐ | License | Description |
 |---|---|---|---|
