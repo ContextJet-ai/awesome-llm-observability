@@ -131,7 +131,7 @@ A quick orientation for the most common question - _"Langfuse vs Phoenix vs Lang
 | [Helicone](https://github.com/Helicone/helicone) | ✅ | Apache-2.0 | ✅ | ➖ | ✅ | ➖ |
 | [Latitude](https://github.com/latitude-dev/latitude-llm) | ✅ | MIT | ✅ | ✅ | ✅ | ➖ |
 | [Laminar](https://github.com/lmnr-ai/lmnr) | ✅ | Apache-2.0 | ✅ | ✅ | ➖ | ✅ |
-| [MLflow](https://github.com/mlflow/mlflow) | ✅ | Apache-2.0 | ✅ | ✅ | ➖ | ➖ |
+| [MLflow](https://github.com/mlflow/mlflow) | ✅ | Apache-2.0 | ✅ | ✅ | ➖ | ✅ |
 | [OpenLIT](https://github.com/openlit/openlit) | ✅ | Apache-2.0 | ✅ | ✅ | ➖ | ✅ |
 
 ✅ first-class · ➖ limited/not the focus. Need help deciding? Use the [`choose-observability-stack`](skills/choose-observability-stack/SKILL.md) skill.
