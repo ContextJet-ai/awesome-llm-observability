@@ -2,10 +2,9 @@
 
 # Awesome LLM Observability [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
 
-**Two things in one repo:**
+**A current, hand-checked list of 50+ LLM observability tools, plus 26 [agent skills](#-skills-batteries-included) you install in one command.**
 
-**① A curated list** of 50+ verified tools for tracing, evaluating, and monitoring LLM & AI-agent apps.
-**② A pack of 26 [Agent Skills](#-skills-batteries-included)** that turn your coding agent into an LLM-observability specialist: instrument tracing, add evals, debug agents, cut cost, detect hallucinations, and secure your app. One command to install.
+Star counts refresh themselves. The skills get validated in CI. More on both further down.
 
 [![26 Agent Skills](https://img.shields.io/badge/🧰_Agent_Skills-26-1f6feb)](#-skills-batteries-included)
 [![Install](https://img.shields.io/badge/install-1_command-brightgreen)](#-skills-batteries-included)
@@ -18,8 +17,7 @@
 
 </div>
 
-> [!NOTE]
-> LLM observability is one of the fastest-growing layers of the AI stack - an estimated **~$2.7B market in 2026, projected to ~$9.3B by 2030 (≈36% CAGR)**. Gartner projects LLM-observability investment will rise from ~15% of GenAI deployments in early 2026 to **50% by 2028**, yet **73% of enterprises need AI-agent monitoring in production while 63% cite a lack of adequate tooling**. This list maps the landscape so you can find the right tool fast.
+The tooling for watching LLM apps in production is a fast-moving mess of overlapping projects, and every list I found had stars from 2023 on it. So I kept my own, verified the entries, and wired up a job to keep the numbers honest. Use it to find the right tool without re-researching the whole space.
 
 **Legend:** 🟢 open-source · 🔵 open-core / hybrid · 🟠 commercial (public repo is an SDK/client only - low star counts don't reflect the product). Star counts are pulled live from the GitHub API and **auto-refreshed weekly by CI** ([tools/refresh_stars.py](tools/refresh_stars.py)), so they stay current instead of rotting.
 
@@ -43,18 +41,22 @@
 
 ## What is LLM Observability?
 
-**LLM observability** - also called **LLMOps observability**, **AI observability**, or **LLM monitoring** - is the practice of tracing, evaluating, and monitoring large language model and AI-agent applications in production.
+Regular observability assumes your system is deterministic. LLM apps aren't. They make things up, drift as inputs change, quietly burn tokens, and fail without ever throwing an error. So you end up watching different things:
 
-Traditional observability assumes deterministic systems. LLM apps are **non-deterministic, token-metered, and failure-rich** - they hallucinate, drift, run up cost, and fail silently. LLM observability adds the missing pillars:
+- tracing: every step of a run, with tokens, latency, and cost per span
+- evals: whether the output is actually any good, both offline and on live traffic
+- monitoring: alerts when quality, cost, latency, or error rate move
+- prompt and dataset management: version your prompts, and pull real production cases back into your tests
 
-- **Tracing** - capture every step of a chain/agent run (prompts, tool calls, retrievals, sub-agent spans) with token + latency + cost per span.
-- **Evaluation** - score output quality (correctness, faithfulness, relevance, safety), offline and online, often via **LLM-as-a-judge** and reference-based metrics.
-- **Monitoring** - dashboards + alerts on latency, cost, error rate, hallucination/quality scores, and drift over time.
-- **Prompt & dataset management** - version prompts, curate eval datasets, and close the feedback loop from production back into tests.
+People call this LLMOps observability, AI observability, or just LLM monitoring. Same idea.
 
 ## 🧰 Skills (Batteries Included)
 
-Most lists stop at links. This one ships **26 original [Agent Skills](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview)** (by [ContextJet.ai](https://www.contextjetai.com)) that turn the tools below into working setups. They auto-trigger when you ask your coding agent things like "add tracing", "reduce my LLM bill", or "debug my agent". Authored to Anthropic's skill best-practices (focused `SKILL.md`, progressive disclosure, actionable checklists). Skills marked ⚙️ ship a **runnable, unit-tested** Python script (the tests run in CI, so "how do you validate this?" has an answer you can run yourself). On top of that, the skills ship **[trigger cases](validation/cases/)** and are checked with [**skillvitals**](https://github.com/ContextJet-ai/skillvitals), a sister tool that measures whether a skill reliably fires when it should. A free heuristic runs as a regression gate in CI. And graded against a real model (`meta/llama-3.1-8b-instruct` via NVIDIA NIM), **all 26 skills** score a **mean trigger F1 of 0.99 (98.7% recall, 0% false-fire)**, holding even on *adjacent* hard negatives (prompts about a different LLM task that a well-scoped skill must not fire on). It is not a clean sweep, and that is the point: `choose-observability-stack` scored 0.80 because the model confused a "compare Langfuse vs Phoenix" prompt with the model-comparison skill, which is exactly the kind of real overlap this surfaces. Reproduce any of it:
+Most lists stop at links. This one also ships 26 [agent skills](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview), the `SKILL.md` kind, so your coding agent knows how to actually do this stuff instead of just knowing where the tools live. They fire on plain requests like "add tracing" or "reduce my LLM bill".
+
+A handful (marked ⚙️) are backed by real Python with unit tests that run in CI. The rest ship trigger cases and get checked by [skillvitals](https://github.com/ContextJet-ai/skillvitals), a small tool I built to measure whether a skill actually fires when it should. A free heuristic runs on every push as a regression gate.
+
+Graded on a cheap model (llama-3.1-8b via NVIDIA NIM), the 26 skills average a trigger F1 of 0.99 (98.7% recall, 0% false-fire), and that holds even against adjacent negatives, prompts about a *different* LLM task the skill should refuse to fire on. It's not a clean sweep though. `choose-observability-stack` came in at 0.80 because the model kept confusing a "compare Langfuse vs Phoenix" prompt with the model-comparison skill. That's exactly the kind of overlap this is meant to catch. Run it yourself:
 
 ```bash
 skillvitals trigger skills/reduce-llm-cost/SKILL.md \
@@ -120,7 +122,7 @@ git clone https://github.com/ContextJet-ai/awesome-llm-observability
 
 ## Platform Comparison (At a Glance)
 
-A quick orientation for the most common question - _"Langfuse vs Phoenix vs LangSmith vs Opik vs Helicone…?"_ Pick by your hard constraints (self-hosting, license) first. Verify specifics against current docs.
+The question everyone asks first is _"Langfuse or Phoenix or LangSmith or Opik or Helicone?"_ Pick by the constraints you can't bend (self-hosting, license), then worry about features. Double-check specifics against the docs, this table moves.
 
 | Platform | Self-host | License | Tracing | Evals | Prompt Mgmt | OTel-native |
 |---|:--:|---|:--:|:--:|:--:|:--:|
