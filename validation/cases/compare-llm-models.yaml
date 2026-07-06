@@ -1,0 +1,6 @@
+cases:
+  - {prompt: "which model should I use for extraction", should_fire: true}
+  - {prompt: "should I switch models for this task", should_fire: true}
+  - {prompt: "compare models for my chatbot", should_fire: true}
+  - {prompt: "help me write a birthday message", should_fire: false}
+  - {prompt: "what's the weather in paris today", should_fire: false}

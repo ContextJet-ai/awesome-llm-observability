@@ -1,0 +1,6 @@
+cases:
+  - {prompt: "red team my llm before we launch", should_fire: true}
+  - {prompt: "test for prompt injection in my agent", should_fire: true}
+  - {prompt: "jailbreak testing for my chatbot", should_fire: true}
+  - {prompt: "plan my weekend in the mountains", should_fire: false}
+  - {prompt: "explain how photosynthesis works", should_fire: false}

@@ -1,0 +1,20 @@
+name: skill-validation
+on: [push, pull_request, workflow_dispatch]
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install skillvitals
+        run: pip install "git+https://github.com/ContextJet-ai/skillvitals.git"
+      - name: Trigger smoke-test every validated skill (free heuristic)
+        run: |
+          set -e
+          for f in validation/cases/*.yaml; do
+            name=$(basename "$f" .yaml)
+            echo "== $name =="
+            skillvitals trigger "skills/$name/SKILL.md" --cases "$f" --min-recall 0.8
+          done

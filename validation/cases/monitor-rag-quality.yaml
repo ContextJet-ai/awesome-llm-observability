@@ -1,0 +1,6 @@
+cases:
+  - {prompt: "my rag gives wrong answers a lot", should_fire: true}
+  - {prompt: "how do I evaluate my rag pipeline", should_fire: true}
+  - {prompt: "is my retrieval any good, how do I check", should_fire: true}
+  - {prompt: "translate this sentence into french", should_fire: false}
+  - {prompt: "what's a good pasta recipe", should_fire: false}

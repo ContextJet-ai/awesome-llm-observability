@@ -1,0 +1,6 @@
+cases:
+  - {prompt: "add tracing to my llm app", should_fire: true}
+  - {prompt: "I want to see what my agent is doing", should_fire: true}
+  - {prompt: "how do I instrument my agent", should_fire: true}
+  - {prompt: "recommend a movie for tonight", should_fire: false}
+  - {prompt: "convert 30 celsius to fahrenheit", should_fire: false}

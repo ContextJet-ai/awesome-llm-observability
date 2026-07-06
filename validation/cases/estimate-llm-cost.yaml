@@ -1,0 +1,6 @@
+cases:
+  - {prompt: "how much will this cost to run per month", should_fire: true}
+  - {prompt: "estimate my openai bill for this feature", should_fire: true}
+  - {prompt: "is a cheaper model worth it for this", should_fire: true}
+  - {prompt: "tell me a fun fact about space", should_fire: false}
+  - {prompt: "who won the world cup in 2022", should_fire: false}

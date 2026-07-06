@@ -1,0 +1,6 @@
+cases:
+  - {prompt: "how do I detect hallucinations in my rag app", should_fire: true}
+  - {prompt: "is the model making this up, how can I tell", should_fire: true}
+  - {prompt: "I need a hallucination check on my outputs", should_fire: true}
+  - {prompt: "book me a flight to tokyo next week", should_fire: false}
+  - {prompt: "what is the capital of australia", should_fire: false}

@@ -10,6 +10,7 @@
 [![26 Agent Skills](https://img.shields.io/badge/🧰_Agent_Skills-26-1f6feb)](#-skills-batteries-included)
 [![Install](https://img.shields.io/badge/install-1_command-brightgreen)](#-skills-batteries-included)
 [![tests](https://github.com/ContextJet-ai/awesome-llm-observability/actions/workflows/tests.yml/badge.svg)](https://github.com/ContextJet-ai/awesome-llm-observability/actions/workflows/tests.yml)
+[![skills validated](https://github.com/ContextJet-ai/awesome-llm-observability/actions/workflows/skill-validation.yml/badge.svg)](https://github.com/ContextJet-ai/awesome-llm-observability/actions/workflows/skill-validation.yml)
 [![Awesome](https://img.shields.io/badge/Awesome-list-blueviolet)](https://awesome.re)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
 [![License: CC0](https://img.shields.io/badge/License-CC0_1.0-lightgrey.svg)](LICENSE)
@@ -53,7 +54,7 @@ Traditional observability assumes deterministic systems. LLM apps are **non-dete
 
 ## 🧰 Skills (Batteries Included)
 
-Most lists stop at links. This one ships **26 original [Agent Skills](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview)** (by [ContextJet.ai](https://www.contextjetai.com)) that turn the tools below into working setups. They auto-trigger when you ask your coding agent things like "add tracing", "reduce my LLM bill", or "debug my agent". Authored to Anthropic's skill best-practices (focused `SKILL.md`, progressive disclosure, actionable checklists). Skills marked ⚙️ ship a **runnable, unit-tested** Python script (the tests run in CI, so "how do you validate this?" has an answer you can run yourself).
+Most lists stop at links. This one ships **26 original [Agent Skills](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview)** (by [ContextJet.ai](https://www.contextjetai.com)) that turn the tools below into working setups. They auto-trigger when you ask your coding agent things like "add tracing", "reduce my LLM bill", or "debug my agent". Authored to Anthropic's skill best-practices (focused `SKILL.md`, progressive disclosure, actionable checklists). Skills marked ⚙️ ship a **runnable, unit-tested** Python script (the tests run in CI, so "how do you validate this?" has an answer you can run yourself). On top of that, the skills ship **[trigger cases](validation/cases/)** and are smoke-tested in CI with [**skillvitals**](https://github.com/ContextJet-ai/skillvitals), a sister tool that checks whether a skill reliably fires when it should. The free heuristic runs as a regression gate here; point `skillvitals trigger --model ...` at a cheap model for a graded score.
 
 ### Install (about 10 seconds)
 

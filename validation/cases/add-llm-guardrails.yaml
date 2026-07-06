@@ -1,0 +1,6 @@
+cases:
+  - {prompt: "add guardrails to my agent before launch", should_fire: true}
+  - {prompt: "how do I prevent prompt injection", should_fire: true}
+  - {prompt: "stop pii leaks from my chatbot", should_fire: true}
+  - {prompt: "what time is it in london right now", should_fire: false}
+  - {prompt: "recommend a good science fiction book", should_fire: false}

@@ -1,0 +1,6 @@
+cases:
+  - {prompt: "how can I reduce token usage in my app", should_fire: true}
+  - {prompt: "my llm cost is way too high this month", should_fire: true}
+  - {prompt: "the app is expensive, help me cut the cost", should_fire: true}
+  - {prompt: "what's a good recipe for dinner tonight", should_fire: false}
+  - {prompt: "tell me a joke about cats", should_fire: false}
