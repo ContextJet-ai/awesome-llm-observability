@@ -4,3 +4,5 @@ cases:
   - {prompt: "compare models for my chatbot", should_fire: true}
   - {prompt: "help me write a birthday message", should_fire: false}
   - {prompt: "what's the weather in paris today", should_fire: false}
+  - {prompt: "detect hallucinations in my chatbot output", should_fire: false}
+  - {prompt: "add tracing to my llm pipeline", should_fire: false}

@@ -4,3 +4,5 @@ cases:
   - {prompt: "is my retrieval any good, how do I check", should_fire: true}
   - {prompt: "translate this sentence into french", should_fire: false}
   - {prompt: "what's a good pasta recipe", should_fire: false}
+  - {prompt: "test my agent for prompt injection", should_fire: false}
+  - {prompt: "add tracing to my llm app", should_fire: false}

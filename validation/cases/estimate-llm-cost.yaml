@@ -4,3 +4,5 @@ cases:
   - {prompt: "is a cheaper model worth it for this", should_fire: true}
   - {prompt: "tell me a fun fact about space", should_fire: false}
   - {prompt: "who won the world cup in 2022", should_fire: false}
+  - {prompt: "add tracing to my llm app", should_fire: false}
+  - {prompt: "detect hallucinations in the answers", should_fire: false}

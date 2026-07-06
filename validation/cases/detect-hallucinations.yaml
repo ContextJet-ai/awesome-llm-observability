@@ -4,3 +4,5 @@ cases:
   - {prompt: "I need a hallucination check on my outputs", should_fire: true}
   - {prompt: "book me a flight to tokyo next week", should_fire: false}
   - {prompt: "what is the capital of australia", should_fire: false}
+  - {prompt: "which model should I pick for extraction", should_fire: false}
+  - {prompt: "add tracing to my agent", should_fire: false}

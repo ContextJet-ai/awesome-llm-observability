@@ -4,3 +4,5 @@ cases:
   - {prompt: "jailbreak testing for my chatbot", should_fire: true}
   - {prompt: "plan my weekend in the mountains", should_fire: false}
   - {prompt: "explain how photosynthesis works", should_fire: false}
+  - {prompt: "how much will this feature cost", should_fire: false}
+  - {prompt: "add tracing to my agent", should_fire: false}

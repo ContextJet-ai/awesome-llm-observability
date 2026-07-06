@@ -54,7 +54,13 @@ Traditional observability assumes deterministic systems. LLM apps are **non-dete
 
 ## 🧰 Skills (Batteries Included)
 
-Most lists stop at links. This one ships **26 original [Agent Skills](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview)** (by [ContextJet.ai](https://www.contextjetai.com)) that turn the tools below into working setups. They auto-trigger when you ask your coding agent things like "add tracing", "reduce my LLM bill", or "debug my agent". Authored to Anthropic's skill best-practices (focused `SKILL.md`, progressive disclosure, actionable checklists). Skills marked ⚙️ ship a **runnable, unit-tested** Python script (the tests run in CI, so "how do you validate this?" has an answer you can run yourself). On top of that, the skills ship **[trigger cases](validation/cases/)** and are smoke-tested in CI with [**skillvitals**](https://github.com/ContextJet-ai/skillvitals), a sister tool that checks whether a skill reliably fires when it should. The free heuristic runs as a regression gate here; point `skillvitals trigger --model ...` at a cheap model for a graded score.
+Most lists stop at links. This one ships **26 original [Agent Skills](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview)** (by [ContextJet.ai](https://www.contextjetai.com)) that turn the tools below into working setups. They auto-trigger when you ask your coding agent things like "add tracing", "reduce my LLM bill", or "debug my agent". Authored to Anthropic's skill best-practices (focused `SKILL.md`, progressive disclosure, actionable checklists). Skills marked ⚙️ ship a **runnable, unit-tested** Python script (the tests run in CI, so "how do you validate this?" has an answer you can run yourself). On top of that, the skills ship **[trigger cases](validation/cases/)** and are checked with [**skillvitals**](https://github.com/ContextJet-ai/skillvitals), a sister tool that measures whether a skill reliably fires when it should. A free heuristic runs as a regression gate in CI. And graded against a real model (`meta/llama-3.1-8b-instruct` via NVIDIA NIM), the 8 skills with cases score a **mean trigger F1 of 1.00 (100% recall, 0% false-fire)**, holding even on *adjacent* hard negatives (prompts about a different LLM task that a well-scoped skill must not fire on). Reproduce it yourself:
+
+```bash
+skillvitals trigger skills/reduce-llm-cost/SKILL.md \
+  --cases validation/cases/reduce-llm-cost.yaml \
+  --model meta/llama-3.1-8b-instruct --base-url https://integrate.api.nvidia.com/v1
+```
 
 ### Install (about 10 seconds)
 

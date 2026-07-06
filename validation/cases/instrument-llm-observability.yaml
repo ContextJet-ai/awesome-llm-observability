@@ -4,3 +4,5 @@ cases:
   - {prompt: "how do I instrument my agent", should_fire: true}
   - {prompt: "recommend a movie for tonight", should_fire: false}
   - {prompt: "convert 30 celsius to fahrenheit", should_fire: false}
+  - {prompt: "estimate my monthly api bill", should_fire: false}
+  - {prompt: "which model should I use here", should_fire: false}
