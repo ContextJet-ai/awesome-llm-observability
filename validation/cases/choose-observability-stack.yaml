@@ -1,0 +1,15 @@
+cases:
+- prompt: which observability tool should I use
+  should_fire: true
+- prompt: compare Langfuse vs Phoenix vs LangSmith
+  should_fire: true
+- prompt: what's the best LLM monitoring for us
+  should_fire: true
+- prompt: what is the weather in paris today
+  should_fire: false
+- prompt: recommend a good sci-fi book
+  should_fire: false
+- prompt: add tracing to my llm app
+  should_fire: false
+- prompt: how much will this cost to run
+  should_fire: false

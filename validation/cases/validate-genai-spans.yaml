@@ -1,0 +1,15 @@
+cases:
+- prompt: are my traces complete
+  should_fire: true
+- prompt: help me validate my instrumentation
+  should_fire: true
+- prompt: my spans are missing fields
+  should_fire: true
+- prompt: what is the weather in paris today
+  should_fire: false
+- prompt: recommend a good sci-fi book
+  should_fire: false
+- prompt: add tracing to my llm app
+  should_fire: false
+- prompt: how much will this cost to run
+  should_fire: false

@@ -1,0 +1,15 @@
+cases:
+- prompt: is this answer reliable
+  should_fire: true
+- prompt: help me flag low-confidence answers
+  should_fire: true
+- prompt: help me cheap hallucination check
+  should_fire: true
+- prompt: what is the weather in paris today
+  should_fire: false
+- prompt: recommend a good sci-fi book
+  should_fire: false
+- prompt: add tracing to my llm app
+  should_fire: false
+- prompt: how much will this cost to run
+  should_fire: false

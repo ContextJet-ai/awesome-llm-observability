@@ -1,0 +1,15 @@
+cases:
+- prompt: A/B test my prompt
+  should_fire: true
+- prompt: roll out a new model safely
+  should_fire: true
+- prompt: compare two prompts in production
+  should_fire: true
+- prompt: what is the weather in paris today
+  should_fire: false
+- prompt: recommend a good sci-fi book
+  should_fire: false
+- prompt: add tracing to my llm app
+  should_fire: false
+- prompt: how much will this cost to run
+  should_fire: false

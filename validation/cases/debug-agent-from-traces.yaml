@@ -1,0 +1,15 @@
+cases:
+- prompt: my agent gave the wrong answer
+  should_fire: true
+- prompt: the chain returned nothing
+  should_fire: true
+- prompt: why is this so slow/expensive
+  should_fire: true
+- prompt: what is the weather in paris today
+  should_fire: false
+- prompt: recommend a good sci-fi book
+  should_fire: false
+- prompt: add tracing to my llm app
+  should_fire: false
+- prompt: how much will this cost to run
+  should_fire: false

@@ -1,0 +1,15 @@
+cases:
+- prompt: help me optimize my prompt
+  should_fire: true
+- prompt: make this prompt better
+  should_fire: true
+- prompt: the prompt isn't working well
+  should_fire: true
+- prompt: what is the weather in paris today
+  should_fire: false
+- prompt: recommend a good sci-fi book
+  should_fire: false
+- prompt: add tracing to my llm app
+  should_fire: false
+- prompt: how much will this cost to run
+  should_fire: false

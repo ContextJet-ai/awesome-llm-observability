@@ -1,0 +1,15 @@
+cases:
+- prompt: make an eval set
+  should_fire: true
+- prompt: what should I test my LLM on
+  should_fire: true
+- prompt: I don't have test data for my prompt
+  should_fire: true
+- prompt: what is the weather in paris today
+  should_fire: false
+- prompt: recommend a good sci-fi book
+  should_fire: false
+- prompt: add tracing to my llm app
+  should_fire: false
+- prompt: how much will this cost to run
+  should_fire: false

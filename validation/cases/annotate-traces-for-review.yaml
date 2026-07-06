@@ -1,0 +1,15 @@
+cases:
+- prompt: review my LLM outputs
+  should_fire: true
+- prompt: have an expert label these
+  should_fire: true
+- prompt: help me error analysis
+  should_fire: true
+- prompt: what is the weather in paris today
+  should_fire: false
+- prompt: recommend a good sci-fi book
+  should_fire: false
+- prompt: add tracing to my llm app
+  should_fire: false
+- prompt: how much will this cost to run
+  should_fire: false

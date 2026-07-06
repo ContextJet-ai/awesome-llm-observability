@@ -1,0 +1,15 @@
+cases:
+- prompt: turn traces into tests
+  should_fire: true
+- prompt: capture this bug as a test
+  should_fire: true
+- prompt: build tests from production data
+  should_fire: true
+- prompt: what is the weather in paris today
+  should_fire: false
+- prompt: recommend a good sci-fi book
+  should_fire: false
+- prompt: add tracing to my llm app
+  should_fire: false
+- prompt: how much will this cost to run
+  should_fire: false
