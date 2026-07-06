@@ -21,7 +21,7 @@
 > [!NOTE]
 > LLM observability is one of the fastest-growing layers of the AI stack - an estimated **~$2.7B market in 2026, projected to ~$9.3B by 2030 (≈36% CAGR)**. Gartner projects LLM-observability investment will rise from ~15% of GenAI deployments in early 2026 to **50% by 2028**, yet **73% of enterprises need AI-agent monitoring in production while 63% cite a lack of adequate tooling**. This list maps the landscape so you can find the right tool fast.
 
-**Legend:** 🟢 open-source · 🔵 open-core / hybrid · 🟠 commercial (public repo is an SDK/client only - low star counts don't reflect the product). Star counts are approximate (July 2026) and refreshed periodically.
+**Legend:** 🟢 open-source · 🔵 open-core / hybrid · 🟠 commercial (public repo is an SDK/client only - low star counts don't reflect the product). Star counts are pulled live from the GitHub API and **auto-refreshed weekly by CI** ([tools/refresh_stars.py](tools/refresh_stars.py)), so they stay current instead of rotting.
 
 ## Contents
 
@@ -136,21 +136,21 @@ End-to-end tracing + dashboards for LLM/RAG/agent apps.
 
 | Tool | ⭐ | License | Description |
 |---|---|---|---|
-| 🔵 [Langfuse](https://github.com/langfuse/langfuse) | 30.4k | MIT (open-core) | AI engineering platform: tracing, evals, prompt mgmt, playground. The most widely adopted OSS LLM-obs platform. |
+| 🔵 [Langfuse](https://github.com/langfuse/langfuse) | 30.5k | MIT (open-core) | AI engineering platform: tracing, evals, prompt mgmt, playground. The most widely adopted OSS LLM-obs platform. |
 | 🟢 [MLflow](https://github.com/mlflow/mlflow) | 26.9k | Apache-2.0 | The ML platform, now with first-class LLM/agent **tracing & evaluation**. |
 | 🟢 [Comet Opik](https://github.com/comet-ml/opik) | 20.3k | Apache-2.0 | Trace, evaluate & monitor LLM/RAG/agent apps; automated prompt optimization. |
 | 🟢 [Microsoft PromptFlow](https://github.com/microsoft/promptflow) | 11.2k | MIT | Build, test, deploy & monitor LLM apps end-to-end. |
 | 🟢 [Arize Phoenix](https://github.com/Arize-ai/phoenix) | 10.4k | Elastic v2 | OpenTelemetry-native AI observability & evaluation; runs locally or self-hosted. |
 | 🟢 [Helicone](https://github.com/Helicone/helicone) | 5.9k | Apache-2.0 | One-line **proxy** observability - change the base URL, log every request/cost/error. |
 | 🟢 [Latitude](https://github.com/latitude-dev/latitude-llm) | 4.4k | MIT | Open-source LLM monitoring + prompt-engineering platform. |
-| 🟢 [Laminar](https://github.com/lmnr-ai/lmnr) | 3.0k | Apache-2.0 | Open-source observability + evals, purpose-built for AI agents. |
+| 🟢 [Laminar](https://github.com/lmnr-ai/lmnr) | 3.1k | Apache-2.0 | Open-source observability + evals, purpose-built for AI agents. |
 | 🟢 [LangWatch](https://github.com/langwatch/langwatch) | 3.3k | Apache-2.0 | Evals + agent testing + observability platform. |
 | 🟢 [OpenLIT](https://github.com/openlit/openlit) | 2.6k | Apache-2.0 | OTel-native LLM observability with GPU monitoring, guardrails & evals. |
 | 🟢 [Langtrace](https://github.com/Scale3-Labs/langtrace) | 1.2k | AGPL-3.0 | OpenTelemetry-based end-to-end LLM app observability. |
 | 🟢 [W&B Weave](https://github.com/wandb/weave) | 1.1k | Apache-2.0 | Weights & Biases toolkit for tracing/eval of LLM apps (SaaS backend). |
-| 🟠 [LangSmith](https://github.com/langchain-ai/langsmith-sdk) | 0.9k (SDK) | MIT (SDK) | Tracing/eval platform from LangChain; SDK is OSS, backend commercial. |
-| 🟠 [Datadog LLM Observability](https://github.com/DataDog/dd-trace-py) | 0.6k (tracer) | BSD-3 | LLM Observability product on top of Datadog APM. |
-| 🟠 [New Relic AI Monitoring](https://github.com/newrelic/newrelic-python-agent) | 0.2k (agent) | Apache-2.0 | AI monitoring integrated into New Relic's agent. |
+| 🟠 [LangSmith](https://github.com/langchain-ai/langsmith-sdk) | 957 (SDK) | MIT (SDK) | Tracing/eval platform from LangChain; SDK is OSS, backend commercial. |
+| 🟠 [Datadog LLM Observability](https://github.com/DataDog/dd-trace-py) | 642 (tracer) | BSD-3 | LLM Observability product on top of Datadog APM. |
+| 🟠 [New Relic AI Monitoring](https://github.com/newrelic/newrelic-python-agent) | 209 (agent) | Apache-2.0 | AI monitoring integrated into New Relic's agent. |
 | 🟠 [Azure Monitor / App Insights](https://learn.microsoft.com/azure/azure-monitor/app/opentelemetry-enable) | SDK | MIT (SDK) | OpenTelemetry-native APM with GenAI + agent-trace visualization; the observability backend under Azure AI Foundry. |
 | 🟠 [Literal AI](https://github.com/Chainlit/literalai-python) | SDK | Apache-2.0 | Observability/eval platform from the Chainlit team. |
 | 🟠 [Lunary](https://github.com/lunary-ai/lunary-py) | SDK | Apache-2.0 | Analytics, monitoring & evals for GenAI apps (open-core). |
@@ -165,7 +165,7 @@ Test and score LLM/agent output - in CI (offline) and in production (online).
 |---|---|---|---|
 | 🟢 [promptfoo](https://github.com/promptfoo/promptfoo) | 22.9k | MIT | Test/eval prompts, agents & RAG; red-teaming and CI/CD. |
 | 🟢 [OpenAI Evals](https://github.com/openai/evals) | 18.8k | MIT | Framework + registry of benchmarks for evaluating LLMs. |
-| 🟢 [DeepEval](https://github.com/confident-ai/deepeval) | 16.6k | Apache-2.0 | "Pytest for LLMs" - 40+ metrics for LLM output evaluation. |
+| 🟢 [DeepEval](https://github.com/confident-ai/deepeval) | 16.7k | Apache-2.0 | "Pytest for LLMs" - 40+ metrics for LLM output evaluation. |
 | 🟢 [Ragas](https://github.com/vibrantlabsai/ragas) | 14.7k | Apache-2.0 | Evaluation toolkit for LLM/RAG applications. |
 | 🟢 [LM Evaluation Harness](https://github.com/EleutherAI/lm-evaluation-harness) | 13.2k | MIT | Few-shot benchmark evaluation of language models (EleutherAI). |
 | 🟢 [Evidently](https://github.com/evidentlyai/evidently) | 7.7k | Apache-2.0 | ML + LLM observability/eval with 100+ metrics. |
@@ -178,7 +178,7 @@ Test and score LLM/agent output - in CI (offline) and in production (online).
 | 🟢 [OpenEvals](https://github.com/langchain-ai/openevals) | 1.1k | MIT | Ready-made evaluators for LLM apps. |
 | 🟠 [Braintrust](https://github.com/braintrustdata/braintrust-sdk-python) | SDK | Apache-2.0 | Tracing + prompt-centric evals; SDK OSS, platform commercial. |
 | 🟠 [Azure AI Evaluation (Foundry)](https://github.com/Azure/azure-sdk-for-python/tree/main/sdk/evaluation/azure-ai-evaluation) | SDK | MIT | Microsoft Foundry's evaluation SDK: built-in quality + safety/risk evaluators; runs locally or in Foundry. |
-| 🟠 [Athina](https://github.com/athina-ai/athina-evals) | 0.3k | - | Python SDK for running evals on LLM responses. |
+| 🟠 [Athina](https://github.com/athina-ai/athina-evals) | 301 | - | Python SDK for running evals on LLM responses. |
 
 ## Prompt Management & Experimentation
 
@@ -186,7 +186,7 @@ Test and score LLM/agent output - in CI (offline) and in production (online).
 |---|---|---|---|
 | 🟢 [Agenta](https://github.com/Agenta-AI/agenta) | 4.3k | MIT | LLMOps platform: prompt playground, versioning, eval & observability. |
 | 🟢 [Pezzo](https://github.com/pezzolabs/pezzo) | 3.3k | Apache-2.0 | Developer-first prompt design, versioning & observability. |
-| 🟠 [PromptLayer](https://github.com/MagnivOrg/prompt-layer-library) | 0.8k | Apache-2.0 | Log, track, debug & replay prompts and LLM requests. |
+| 🟠 [PromptLayer](https://github.com/MagnivOrg/prompt-layer-library) | 776 | Apache-2.0 | Log, track, debug & replay prompts and LLM requests. |
 
 > Langfuse and Agenta also provide strong prompt management - listed once under their best-fit category.
 
@@ -196,7 +196,7 @@ Route to many providers through one endpoint; get logging, cost tracking & cachi
 
 | Tool | ⭐ | License | Description |
 |---|---|---|---|
-| 🟢 [LiteLLM](https://github.com/BerriAI/litellm) | 52.6k | MIT | Python SDK + proxy calling 100+ LLMs with unified cost tracking & logging. |
+| 🟢 [LiteLLM](https://github.com/BerriAI/litellm) | 52.7k | MIT | Python SDK + proxy calling 100+ LLMs with unified cost tracking & logging. |
 | 🟢 [Portkey Gateway](https://github.com/Portkey-AI/gateway) | 12.3k | MIT | Fast AI gateway routing to 1,600+ LLMs with built-in guardrails & observability. |
 | 🟢 [Helicone](https://github.com/Helicone/helicone) | 5.9k | Apache-2.0 | Proxy-first observability (also listed under Tracing). |
 | 🟠 Cloudflare AI Gateway | - | commercial | Managed AI gateway with analytics/logging/caching (no OSS repo). |
@@ -211,8 +211,8 @@ The observability layer is standardizing on **OpenTelemetry** - emit these and y
 | 🟢 [OpenLLMetry](https://github.com/traceloop/openllmetry) | 7.3k | Apache-2.0 | OTel-based open-source observability for GenAI/LLM apps (Traceloop). |
 | 🟢 [OpenInference](https://github.com/Arize-ai/openinference) | 1.1k | Apache-2.0 | OpenTelemetry instrumentation for AI observability (Arize). |
 | 🟢 [OTel Python Contrib](https://github.com/open-telemetry/opentelemetry-python-contrib) | 1.1k | Apache-2.0 | OTel instrumentation modules, including GenAI. |
-| 🟢 [OTel Semantic Conventions](https://github.com/open-telemetry/semantic-conventions) | 0.6k | Apache-2.0 | Home of the **GenAI semantic conventions** spec (`gen_ai.*`). |
-| 🟢 [WhyLabs LangKit](https://github.com/whylabs/langkit) | 1.0k | Apache-2.0 | Extract telemetry/metrics (quality, sentiment, injection signals) from prompts & responses. |
+| 🟢 [OTel Semantic Conventions](https://github.com/open-telemetry/semantic-conventions) | 601 | Apache-2.0 | Home of the **GenAI semantic conventions** spec (`gen_ai.*`). |
+| 🟢 [WhyLabs LangKit](https://github.com/whylabs/langkit) | 992 | Apache-2.0 | Extract telemetry/metrics (quality, sentiment, injection signals) from prompts & responses. |
 
 ## Guardrails & Safety Monitoring
 
