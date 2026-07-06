@@ -219,6 +219,7 @@ The observability layer is standardizing on **OpenTelemetry** - emit these and y
 | 🟢 [OpenLLMetry](https://github.com/traceloop/openllmetry) | 7.3k | Apache-2.0 | OTel-based open-source observability for GenAI/LLM apps (Traceloop). |
 | 🟢 [OpenInference](https://github.com/Arize-ai/openinference) | 1.1k | Apache-2.0 | OpenTelemetry instrumentation for AI observability (Arize). |
 | 🟢 [OTel Python Contrib](https://github.com/open-telemetry/opentelemetry-python-contrib) | 1.1k | Apache-2.0 | OTel instrumentation modules, including GenAI. |
+| 🟢 [Noveum Trace](https://github.com/Noveum/noveum-trace) | 11 | Apache-2.0 | OpenTelemetry-compliant tracing SDK built specifically for LLM/agent apps. |
 | 🟢 [OTel Semantic Conventions](https://github.com/open-telemetry/semantic-conventions) | 601 | Apache-2.0 | Home of the **GenAI semantic conventions** spec (`gen_ai.*`). |
 | 🟢 [WhyLabs LangKit](https://github.com/whylabs/langkit) | 992 | Apache-2.0 | Extract telemetry/metrics (quality, sentiment, injection signals) from prompts & responses. |
 
