@@ -208,6 +208,7 @@ Route to many providers through one endpoint; get logging, cost tracking & cachi
 | 🟢 [Portkey Gateway](https://github.com/Portkey-AI/gateway) | 12.3k | MIT | Fast AI gateway routing to 1,600+ LLMs with built-in guardrails & observability. |
 | 🟢 [Helicone](https://github.com/Helicone/helicone) | 5.9k | Apache-2.0 | Proxy-first observability (also listed under Tracing). |
 | 🟠 Cloudflare AI Gateway | - | commercial | Managed AI gateway with analytics/logging/caching (no OSS repo). |
+| 🟠 [AI8/New API examples](https://github.com/16692219182pang-cmyk/ai8-openai-compatible-examples) | examples | commercial | OpenAI-compatible API gateway examples for testing one endpoint across multiple models. |
 | 🟠 OpenRouter | - | commercial | Unified API/marketplace routing to many LLMs with usage analytics. |
 
 ## Instrumentation & Standards (OpenTelemetry GenAI)
