@@ -252,7 +252,7 @@ The tooling above is grounded in a fast-moving literature. Key anchors:
 - [Arize Phoenix docs](https://docs.arize.com/phoenix) & [Langfuse docs](https://langfuse.com/docs) - practical tracing/eval concepts.
 - Hamel Husain - [*Your AI Product Needs Evals*](https://hamel.dev/blog/posts/evals/).
 - Chip Huyen - [*Building LLM applications for production*](https://huyenchip.com/2023/04/11/llm-engineering.html).
-- Loop & Retry - [*Measuring agent failure in production*](https://loopandretry.github.io/posts/measuring-agent-failure-in-production/?ref=awesome-llm-obs) - which signals actually surface a broken agent in prod, and why request-level success rates hide the failures that matter.
+- Loop & Retry - [*Measuring agent failure in production*](https://loopandretry.github.io/posts/measuring-agent-failure-in-production/) - which signals actually surface a broken agent in prod, and why request-level success rates hide the failures that matter.
 
 ## Guides & Tools (Original)
 
