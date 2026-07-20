@@ -2,7 +2,7 @@
 
 # Awesome LLM Observability [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
 
-**A current, hand-checked list of 50+ LLM observability tools, plus 26 [agent skills](#-skills-batteries-included) you install in one command.**
+**A current, hand-checked list of 60+ LLM observability tools, plus 26 [agent skills](#-skills-batteries-included) you install in one command.**
 
 Star counts refresh themselves. The skills get validated in CI. More on both further down.
 
@@ -164,6 +164,8 @@ End-to-end tracing + dashboards for LLM/RAG/agent apps.
 | 🟠 [Lunary](https://github.com/lunary-ai/lunary-py) | SDK | Apache-2.0 | Analytics, monitoring & evals for GenAI apps (open-core). |
 | 🟠 [Parea AI](https://github.com/parea-ai/parea-sdk-py) | SDK | Apache-2.0 | Experiment, test, evaluate & monitor LLM apps (YC S23). |
 | 🟠 [HoneyHive](https://honeyhive.ai) | - | commercial | Evaluation & observability platform (no primary OSS repo). |
+| 🟢 [AgentOps](https://github.com/AgentOps-AI/agentops) | 5.7k | MIT | Agent monitoring with session replays, cost + latency tracking, across agent frameworks. |
+| 🟢 [Pydantic Logfire](https://github.com/pydantic/logfire) | 4.4k | MIT | OpenTelemetry-based observability for LLM and agent apps, from the Pydantic team. |
 
 ## Evaluation Frameworks
 
@@ -187,6 +189,11 @@ Test and score LLM/agent output. One thing to sort out before you pick a tool: a
 | 🟠 [Braintrust](https://github.com/braintrustdata/braintrust-sdk-python) | SDK | Apache-2.0 | Tracing + prompt-centric evals; SDK OSS, platform commercial. |
 | 🟠 [Azure AI Evaluation (Foundry)](https://github.com/Azure/azure-sdk-for-python/tree/main/sdk/evaluation/azure-ai-evaluation) | SDK | MIT | Microsoft Foundry's evaluation SDK: built-in quality + safety/risk evaluators; runs locally or in Foundry. |
 | 🟠 [Athina](https://github.com/athina-ai/athina-evals) | 301 | - | Python SDK for running evals on LLM responses. |
+| 🟢 [HELM](https://github.com/stanford-crfm/helm) | 2.9k | Apache-2.0 | Stanford's Holistic Evaluation of Language Models: broad, multi-metric benchmarking. |
+| 🟢 [RAGChecker](https://github.com/amazon-science/RAGChecker) | 1.1k | Apache-2.0 | Fine-grained framework for diagnosing RAG failures (retriever vs generator). |
+| 🟢 [continuous-eval](https://github.com/relari-ai/continuous-eval) | 516 | Apache-2.0 | Data-driven, modular evaluation for LLM/RAG pipelines. |
+| 🟠 [Galileo](https://github.com/rungalileo/galileo-python) | SDK | Apache-2.0 | Eval + observability platform; SDK OSS, platform commercial. |
+| 🟠 [Openlayer](https://github.com/openlayer-ai/openlayer-python) | SDK | Apache-2.0 | Testing, eval & monitoring platform; SDK OSS, platform commercial. |
 
 ## Prompt Management & Experimentation
 
@@ -209,6 +216,7 @@ Route to many providers through one endpoint; get logging, cost tracking & cachi
 | 🟢 [Helicone](https://github.com/Helicone/helicone) | 5.9k | Apache-2.0 | Proxy-first observability (also listed under Tracing). |
 | 🟠 Cloudflare AI Gateway | - | commercial | Managed AI gateway with analytics/logging/caching (no OSS repo). |
 | 🟠 OpenRouter | - | commercial | Unified API/marketplace routing to many LLMs with usage analytics. |
+| 🟢 [Bifrost](https://github.com/maximhq/bifrost) | 6.6k | Apache-2.0 | Fast AI gateway routing to 1,000+ models with logging, cost tracking & governance. |
 
 ## Instrumentation & Standards (OpenTelemetry GenAI)
 
@@ -230,11 +238,13 @@ The observability layer is standardizing on **OpenTelemetry** - emit these and y
 | 🟢 [Guardrails AI](https://github.com/guardrails-ai/guardrails) | 7.1k | Apache-2.0 | Add input/output guardrails and structured validation to LLMs. |
 | 🟢 [NeMo Guardrails](https://github.com/NVIDIA-NeMo/Guardrails) | 6.7k | Apache-2.0 | Programmable guardrails for LLM conversational systems (NVIDIA). |
 | 🟢 [LLM Guard](https://github.com/protectai/llm-guard) | 3.2k | MIT | Security toolkit: PII redaction, prompt-injection & toxicity detection. |
+| 🟢 [Presidio](https://github.com/data-privacy-stack/presidio) | 10.1k | MIT | PII detection, redaction & anonymization; the standard for scrubbing prompts and traces. |
+| 🟢 [garak](https://github.com/NVIDIA/garak) | 8.5k | Apache-2.0 | LLM vulnerability scanner: probes for prompt injection, jailbreaks & data leakage (NVIDIA). |
 
 ## Self-Hosted / Open-Source First
 
 Need data residency / on-prem? These ship a genuinely self-hostable OSS core:
-[Langfuse](https://github.com/langfuse/langfuse) (MIT) · [Arize Phoenix](https://github.com/Arize-ai/phoenix) · [Comet Opik](https://github.com/comet-ml/opik) (Apache-2.0) · [Helicone](https://github.com/Helicone/helicone) (Apache-2.0) · [OpenLIT](https://github.com/openlit/openlit) (Apache-2.0) · [Langtrace](https://github.com/Scale3-Labs/langtrace) (AGPL) · [LangWatch](https://github.com/langwatch/langwatch) (Apache-2.0) · [MLflow](https://github.com/mlflow/mlflow) (Apache-2.0) · [Evidently](https://github.com/evidentlyai/evidently) (Apache-2.0).
+[Langfuse](https://github.com/langfuse/langfuse) (MIT) · [Arize Phoenix](https://github.com/Arize-ai/phoenix) · [Comet Opik](https://github.com/comet-ml/opik) (Apache-2.0) · [Helicone](https://github.com/Helicone/helicone) (Apache-2.0) · [OpenLIT](https://github.com/openlit/openlit) (Apache-2.0) · [Langtrace](https://github.com/Scale3-Labs/langtrace) (AGPL) · [LangWatch](https://github.com/langwatch/langwatch) (Apache-2.0) · [MLflow](https://github.com/mlflow/mlflow) (Apache-2.0) · [Evidently](https://github.com/evidentlyai/evidently) (Apache-2.0) · [SigNoz](https://github.com/SigNoz/signoz) (open-core, OTel-native).
 
 ## Research & Benchmarks
 
