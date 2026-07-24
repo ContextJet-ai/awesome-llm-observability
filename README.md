@@ -194,6 +194,7 @@ Test and score LLM/agent output. One thing to sort out before you pick a tool: a
 | 🟢 [continuous-eval](https://github.com/relari-ai/continuous-eval) | 516 | Apache-2.0 | Data-driven, modular evaluation for LLM/RAG pipelines. |
 | 🟠 [Galileo](https://github.com/rungalileo/galileo-python) | SDK | Apache-2.0 | Eval + observability platform; SDK OSS, platform commercial. |
 | 🟠 [Openlayer](https://github.com/openlayer-ai/openlayer-python) | SDK | Apache-2.0 | Testing, eval & monitoring platform; SDK OSS, platform commercial. |
+| 🟢 [whatbroke](https://github.com/arthi-arumugam-git/whatbroke) | 1 | MIT | CLI that diffs two agent runs: tool calls, args, cost, latency, outcome flips, flake detection. |
 
 ## Prompt Management & Experimentation
 
