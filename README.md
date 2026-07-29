@@ -164,6 +164,7 @@ End-to-end tracing + dashboards for LLM/RAG/agent apps.
 | 🟠 [Lunary](https://github.com/lunary-ai/lunary-py) | SDK | Apache-2.0 | Analytics, monitoring & evals for GenAI apps (open-core). |
 | 🟠 [Parea AI](https://github.com/parea-ai/parea-sdk-py) | SDK | Apache-2.0 | Experiment, test, evaluate & monitor LLM apps (YC S23). |
 | 🟠 [HoneyHive](https://honeyhive.ai) | - | commercial | Evaluation & observability platform (no primary OSS repo). |
+| 🟠 [telemetry.dev](https://telemetry.dev) | - | commercial | OpenTelemetry-native tracing for LLM/agent apps with per-span tokens, cost, latency & errors; TypeScript SDKs + any OTLP exporter (no OSS repo). |
 | 🟢 [AgentOps](https://github.com/AgentOps-AI/agentops) | 5.7k | MIT | Agent monitoring with session replays, cost + latency tracking, across agent frameworks. |
 | 🟢 [Pydantic Logfire](https://github.com/pydantic/logfire) | 4.4k | MIT | OpenTelemetry-based observability for LLM and agent apps, from the Pydantic team. |
 
