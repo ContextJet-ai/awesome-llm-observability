@@ -191,6 +191,7 @@ Test and score LLM/agent output. One thing to sort out before you pick a tool: a
 | 🟠 [Athina](https://github.com/athina-ai/athina-evals) | 301 | - | Python SDK for running evals on LLM responses. |
 | 🟢 [HELM](https://github.com/stanford-crfm/helm) | 2.9k | Apache-2.0 | Stanford's Holistic Evaluation of Language Models: broad, multi-metric benchmarking. |
 | 🟢 [RAGChecker](https://github.com/amazon-science/RAGChecker) | 1.1k | Apache-2.0 | Fine-grained framework for diagnosing RAG failures (retriever vs generator). |
+| 🔵 [agent-qa](https://github.com/vostride/agent-qa) | 768 | FSL-1.1-ALv2 → Apache-2.0 | Natural-language web and mobile regression testing with persistent memory and self-healing execution. |
 | 🟢 [continuous-eval](https://github.com/relari-ai/continuous-eval) | 514 | Apache-2.0 | Data-driven, modular evaluation for LLM/RAG pipelines. |
 | 🟠 [Galileo](https://github.com/rungalileo/galileo-python) | SDK | Apache-2.0 | Eval + observability platform; SDK OSS, platform commercial. |
 | 🟠 [Openlayer](https://github.com/openlayer-ai/openlayer-python) | SDK | Apache-2.0 | Testing, eval & monitoring platform; SDK OSS, platform commercial. |
