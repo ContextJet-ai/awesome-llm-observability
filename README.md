@@ -156,6 +156,7 @@ End-to-end tracing + dashboards for LLM/RAG/agent apps.
 | 🟢 [OpenLIT](https://github.com/openlit/openlit) | 2.7k | Apache-2.0 | OTel-native LLM observability with GPU monitoring, guardrails & evals. |
 | 🟢 [Langtrace](https://github.com/Scale3-Labs/langtrace) | 1.2k | AGPL-3.0 | OpenTelemetry-based end-to-end LLM app observability. |
 | 🟢 [W&B Weave](https://github.com/wandb/weave) | 1.1k | Apache-2.0 | Weights & Biases toolkit for tracing/eval of LLM apps (SaaS backend). |
+| 🟢 [Tracely](https://github.com/Jwuthri/Tracely) | 642 | MIT | Trace-native observability and CI for agents: OTLP tracing, evaluators graded on ingest, failure clustering, and hermetic replay of frozen failures as CI regression tests. |
 | 🟠 [LangSmith](https://github.com/langchain-ai/langsmith-sdk) | 1.0k (SDK) | MIT (SDK) | Tracing/eval platform from LangChain; SDK is OSS, backend commercial. |
 | 🟠 [Datadog LLM Observability](https://github.com/DataDog/dd-trace-py) | 648 (tracer) | BSD-3 | LLM Observability product on top of Datadog APM. |
 | 🟠 [New Relic AI Monitoring](https://github.com/newrelic/newrelic-python-agent) | 209 (agent) | Apache-2.0 | AI monitoring integrated into New Relic's agent. |
