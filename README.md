@@ -166,6 +166,7 @@ End-to-end tracing + dashboards for LLM/RAG/agent apps.
 | 🟠 [HoneyHive](https://honeyhive.ai) | - | commercial | Evaluation & observability platform (no primary OSS repo). |
 | 🟢 [AgentOps](https://github.com/AgentOps-AI/agentops) | 5.8k | MIT | Agent monitoring with session replays, cost + latency tracking, across agent frameworks. |
 | 🟢 [Pydantic Logfire](https://github.com/pydantic/logfire) | 4.4k | MIT | OpenTelemetry-based observability for LLM and agent apps, from the Pydantic team. |
+| 🟢 [AcruxCore](https://github.com/AcruxCore/AcruxCore) | 2 | Apache-2.0 | Self-hosted or SaaS LLM-ops platform: prompt versioning, AI gateway, tracing, and evaluation runs. |
 
 ## Evaluation Frameworks
 
