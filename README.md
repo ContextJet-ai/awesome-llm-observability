@@ -166,6 +166,8 @@ End-to-end tracing + dashboards for LLM/RAG/agent apps.
 | 🟠 [HoneyHive](https://honeyhive.ai) | - | commercial | Evaluation & observability platform (no primary OSS repo). |
 | 🟢 [AgentOps](https://github.com/AgentOps-AI/agentops) | 5.8k | MIT | Agent monitoring with session replays, cost + latency tracking, across agent frameworks. |
 | 🟢 [Pydantic Logfire](https://github.com/pydantic/logfire) | 4.4k | MIT | OpenTelemetry-based observability for LLM and agent apps, from the Pydantic team. |
+| 🔵 [ClawMetry](https://github.com/vivekchand/clawmetry) | 400 | MIT (open-core) | Reads coding-agent session logs from disk rather than proxying calls; sessions, tool calls, tokens and cost for Claude Code, Codex, Cursor, Aider and others. |
+| 🟠 [telemetry.dev](https://telemetry.dev) | - | commercial | OpenTelemetry-native tracing for LLM/agent apps: per-span tokens, cost, latency and errors; TypeScript SDKs or any OTLP exporter (no primary OSS repo). |
 
 ## Evaluation Frameworks
 
@@ -191,6 +193,8 @@ Test and score LLM/agent output. One thing to sort out before you pick a tool: a
 | 🟠 [Athina](https://github.com/athina-ai/athina-evals) | 301 | - | Python SDK for running evals on LLM responses. |
 | 🟢 [HELM](https://github.com/stanford-crfm/helm) | 2.9k | Apache-2.0 | Stanford's Holistic Evaluation of Language Models: broad, multi-metric benchmarking. |
 | 🟢 [RAGChecker](https://github.com/amazon-science/RAGChecker) | 1.1k | Apache-2.0 | Fine-grained framework for diagnosing RAG failures (retriever vs generator). |
+| 🟢 [ClawBench](https://github.com/TIGER-AI-Lab/ClawBench) | 579 | Apache-2.0 | Live-web benchmark for browser and computer-use agents: isolated runs, request interception and replayable execution traces. |
+| 🔵 [agent-qa](https://github.com/vostride/agent-qa) | 955 | FSL-1.1-ALv2 | Natural-language web and mobile regression testing with persistent memory and self-healing execution. |
 | 🟢 [continuous-eval](https://github.com/relari-ai/continuous-eval) | 515 | Apache-2.0 | Data-driven, modular evaluation for LLM/RAG pipelines. |
 | 🟠 [Galileo](https://github.com/rungalileo/galileo-python) | SDK | Apache-2.0 | Eval + observability platform; SDK OSS, platform commercial. |
 | 🟠 [Openlayer](https://github.com/openlayer-ai/openlayer-python) | SDK | Apache-2.0 | Testing, eval & monitoring platform; SDK OSS, platform commercial. |
@@ -270,7 +274,7 @@ Original work in this repo, not just curated links:
 
 - 🧰 **[Agent Skills](skills/)** - 26 ready-to-run workflows (instrument, evals, debug-from-traces, guardrails, PII-safe tracing, tool selection).
 - 📖 **[LLM Observability for Finance & Regulated Industries](guides/llm-observability-for-finance.md)** - a guide for teams where observability is a *compliance control*, not a dashboard.
-- 🛠️ **[](tools/genai_trace.py)** - a minimal vendor-neutral OpenTelemetry GenAI tracer with a PII-redaction hook.
+- 🛠️ **[`genai_trace.py`](tools/genai_trace.py)** - a minimal vendor-neutral OpenTelemetry GenAI tracer with a PII-redaction hook.
 
 ## How to Choose
 
@@ -280,6 +284,36 @@ Original work in this repo, not just curated links:
 - **Want vendor-neutral, future-proof traces?** Emit **OTel GenAI semantic conventions** so you can swap backends.
 
 A common production setup pairs a **gateway** (cost + routing) with an **evaluation tool** (quality) on top of an **OTel-native tracing** backbone.
+
+### What it actually costs to run (self-hosted)
+
+The feature tables above don't tell you what you're signing up to operate, and that's usually the
+thing that decides it. Roughly three tiers:
+
+| Tier | Backing services | Notes |
+|---|---|---|
+| **Single process** | SQLite or one Postgres | Phoenix, MLflow. One container, no OLAP store. Easiest to run. |
+| **Postgres-class** | Postgres (+ object storage for artifacts) | MLflow with a tracking server, Latitude. Ordinary web-app operations. |
+| **OLAP-class** | ClickHouse + Postgres + Redis/Valkey + S3-compatible blob storage | Langfuse v3/v4, Opik, Helicone, SigNoz. Four moving parts, not one. |
+
+**Why ClickHouse keeps showing up:** high-volume span ingest with analytical queries over it is a
+column-store workload, and Postgres degrades on it. It's driven by *tracing* throughput, not by
+evals - if you don't need tracing, the whole tier is avoidable. ClickHouse is a hard requirement
+for self-hosted Langfuse; there's no Postgres-only mode.
+
+**Is a single, non-replicated ClickHouse enough?** For development and low-volume production,
+yes - it runs fine on one node, and that's what the docker-compose quickstarts give you
+(`CLICKHOUSE_CLUSTER_ENABLED=false`). Understand what you're trading: a single node has no
+redundancy, so node loss means trace loss, which is why Langfuse labels single-container Docker
+development-only rather than slow. For production they suggest 3 ClickHouse replicas plus 3
+Keeper nodes, ~2 CPU / 8-16 GiB each. Disk is the thing that bites - observability data grows
+fast, so set a retention policy on day one and use a volume you can expand.
+
+**If that's more than you want to operate:** stay in the single-process tier (Phoenix for
+tracing + evals, MLflow if you're already on it), or run evals in CI with a framework that keeps
+no server at all and reach for a hosted backend only when you actually need trace history.
+
+Versions move - check the self-hosting docs before you size anything.
 
 ## Contributing
 
