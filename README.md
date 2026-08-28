@@ -221,6 +221,7 @@ Route to many providers through one endpoint; get logging, cost tracking & cachi
 | 🟠 Cloudflare AI Gateway | - | commercial | Managed AI gateway with analytics/logging/caching (no OSS repo). |
 | 🟠 OpenRouter | - | commercial | Unified API/marketplace routing to many LLMs with usage analytics. |
 | 🟢 [Bifrost](https://github.com/maximhq/bifrost) | 7.5k | Apache-2.0 | Fast AI gateway routing to 1,000+ models with logging, cost tracking & governance. |
+| 🟠 [XiuRouter](https://router.xiu.ai/) | - | commercial | Hosted multi-model API gateway with OpenAI, Anthropic Messages and Gemini routes, public usage pricing, and per-request token and cost records. |
 
 ## Instrumentation & Standards (OpenTelemetry GenAI)
 
