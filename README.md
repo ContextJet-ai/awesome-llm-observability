@@ -169,6 +169,8 @@ End-to-end tracing + dashboards for LLM/RAG/agent apps.
 | 🔵 [ClawMetry](https://github.com/vivekchand/clawmetry) | 401 | MIT (open-core) | Reads coding-agent session logs from disk rather than proxying calls; sessions, tool calls, tokens and cost for Claude Code, Codex, Cursor, Aider and others. |
 | 🟠 [telemetry.dev](https://telemetry.dev) | - | commercial | OpenTelemetry-native tracing for LLM/agent apps: per-span tokens, cost, latency and errors; TypeScript SDKs or any OTLP exporter (no primary OSS repo). |
 
+| 🟠 [The Context Company](https://www.thecontextcompany.com) | - | commercial | AI agent observability and customer analytics platform that surfaces recurring patterns and account-level insights from production conversations and traces. |
+
 ## Evaluation Frameworks
 
 Test and score LLM/agent output. One thing to sort out before you pick a tool: are you doing **offline/batch** evals (run over a dataset in CI to optimize a prompt) or **inline** evals (score a response live, to gate or block it before it reaches the user)? They're pretty different jobs. Most of the frameworks below are built for the offline case. Live gating usually lands in the [guardrails](#guardrails--safety-monitoring) tools or a platform's online-scoring feature.
