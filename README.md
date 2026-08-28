@@ -244,6 +244,7 @@ The observability layer is standardizing on **OpenTelemetry** - emit these and y
 | 🟢 [LLM Guard](https://github.com/protectai/llm-guard) | 3.2k | MIT | Security toolkit: PII redaction, prompt-injection & toxicity detection. |
 | 🟢 [Presidio](https://github.com/data-privacy-stack/presidio) | 10.6k | MIT | PII detection, redaction & anonymization; the standard for scrubbing prompts and traces. |
 | 🟢 [garak](https://github.com/NVIDIA/garak) | 9.0k | Apache-2.0 | LLM vulnerability scanner: probes for prompt injection, jailbreaks & data leakage (NVIDIA). |
+| 🟢 [piighost](https://github.com/Athroniaeth/piighost) | 11 | MIT | PII de-identification for LLMs. Hides personal data from the model, then restores it for tools and the user. |
 
 ## Self-Hosted / Open-Source First
 
