@@ -234,6 +234,7 @@ The observability layer is standardizing on **OpenTelemetry** - emit these and y
 | 🟢 [Noveum Trace](https://github.com/Noveum/noveum-trace) | 14 | Apache-2.0 | OpenTelemetry-compliant tracing SDK built specifically for LLM/agent apps. |
 | 🟢 [OTel Semantic Conventions](https://github.com/open-telemetry/semantic-conventions) | 641 | Apache-2.0 | Home of the **GenAI semantic conventions** spec (`gen_ai.*`). |
 | 🟢 [WhyLabs LangKit](https://github.com/whylabs/langkit) | 995 | Apache-2.0 | Extract telemetry/metrics (quality, sentiment, injection signals) from prompts & responses. |
+| 🟢 [AgentMeasure](https://github.com/roy-tong/AgentMeasure) | 34 | MIT | Conformance checks for agent-telemetry semantics: retry grain, token subsets, cache accounting, evidence boundaries — PASS/FAIL/UNPROVABLE via fixtures or a CI Action. |
 
 ## Guardrails & Safety Monitoring
 
