@@ -168,6 +168,7 @@ End-to-end tracing + dashboards for LLM/RAG/agent apps.
 | 🟢 [Pydantic Logfire](https://github.com/pydantic/logfire) | 4.4k | MIT | OpenTelemetry-based observability for LLM and agent apps, from the Pydantic team. |
 | 🔵 [ClawMetry](https://github.com/vivekchand/clawmetry) | 402 | MIT (open-core) | Reads coding-agent session logs from disk rather than proxying calls; sessions, tool calls, tokens and cost for Claude Code, Codex, Cursor, Aider and others. |
 | 🟠 [telemetry.dev](https://telemetry.dev) | - | commercial | OpenTelemetry-native tracing for LLM/agent apps: per-span tokens, cost, latency and errors; TypeScript SDKs or any OTLP exporter (no primary OSS repo). |
+| 🟠 [The Context Company](https://github.com/The-Context-Company/observatory) | 123 (SDK) | MIT (SDK) | AI agent observability and customer analytics platform that surfaces recurring patterns and account-level insights from production conversations and traces. |
 
 ## Evaluation Frameworks
 
