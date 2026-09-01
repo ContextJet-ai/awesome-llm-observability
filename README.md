@@ -164,6 +164,7 @@ End-to-end tracing + dashboards for LLM/RAG/agent apps.
 | 🟠 [Lunary](https://github.com/lunary-ai/lunary-py) | SDK | Apache-2.0 | Analytics, monitoring & evals for GenAI apps (open-core). |
 | 🟠 [Parea AI](https://github.com/parea-ai/parea-sdk-py) | SDK | Apache-2.0 | Experiment, test, evaluate & monitor LLM apps (YC S23). |
 | 🟠 [HoneyHive](https://honeyhive.ai) | - | commercial | Evaluation & observability platform (no primary OSS repo). |
+| 🟠 [Traceplain](https://traceplain.zakgov.com/?utm_source=github&utm_medium=directory&utm_campaign=contextjet) | - | commercial | Browser-local reviewer that turns Codex, Claude Code, and OTLP JSON agent records into evidence-labelled human handbacks. |
 | 🟢 [AgentOps](https://github.com/AgentOps-AI/agentops) | 5.8k | MIT | Agent monitoring with session replays, cost + latency tracking, across agent frameworks. |
 | 🟢 [Pydantic Logfire](https://github.com/pydantic/logfire) | 4.4k | MIT | OpenTelemetry-based observability for LLM and agent apps, from the Pydantic team. |
 | 🔵 [ClawMetry](https://github.com/vivekchand/clawmetry) | 402 | MIT (open-core) | Reads coding-agent session logs from disk rather than proxying calls; sessions, tool calls, tokens and cost for Claude Code, Codex, Cursor, Aider and others. |
