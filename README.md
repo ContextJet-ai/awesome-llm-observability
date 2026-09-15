@@ -167,6 +167,7 @@ End-to-end tracing + dashboards for LLM/RAG/agent apps.
 | 🟢 [AgentOps](https://github.com/AgentOps-AI/agentops) | 5.8k | MIT | Agent monitoring with session replays, cost + latency tracking, across agent frameworks. |
 | 🟢 [Pydantic Logfire](https://github.com/pydantic/logfire) | 4.5k | MIT | OpenTelemetry-based observability for LLM and agent apps, from the Pydantic team. |
 | 🔵 [ClawMetry](https://github.com/vivekchand/clawmetry) | 415 | MIT (open-core) | Reads coding-agent session logs from disk rather than proxying calls; sessions, tool calls, tokens and cost for Claude Code, Codex, Cursor, Aider and others. |
+| 🟠 [Speakeasy](https://www.speakeasy.com/product/ai-control-plane) | - | commercial | Enterprise AI control plane for governing access, policy and auditability across agents, MCP servers and Skills. |
 | 🟠 [telemetry.dev](https://telemetry.dev) | - | commercial | OpenTelemetry-native tracing for LLM/agent apps: per-span tokens, cost, latency and errors; TypeScript SDKs or any OTLP exporter (no primary OSS repo). |
 
 ## Evaluation Frameworks
