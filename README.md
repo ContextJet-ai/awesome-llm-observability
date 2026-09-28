@@ -167,6 +167,7 @@ End-to-end tracing + dashboards for LLM/RAG/agent apps.
 | 🟢 [AgentOps](https://github.com/AgentOps-AI/agentops) | 5.8k | MIT | Agent monitoring with session replays, cost + latency tracking, across agent frameworks. |
 | 🟢 [Pydantic Logfire](https://github.com/pydantic/logfire) | 4.5k | MIT | OpenTelemetry-based observability for LLM and agent apps, from the Pydantic team. |
 | 🔵 [ClawMetry](https://github.com/vivekchand/clawmetry) | 419 | MIT (open-core) | Reads coding-agent session logs from disk rather than proxying calls; sessions, tool calls, tokens and cost for Claude Code, Codex, Cursor, Aider and others. |
+| 🟢 [OrcaReplay](https://github.com/Continuum-AI-Corp/OrcaReplay) | 268 | Apache-2.0 | Records a coding-agent run below the harness and replays it offline from the recorded bytes with no model called; a run can be forked at any step onto a different model. |
 | 🟠 [telemetry.dev](https://telemetry.dev) | - | commercial | OpenTelemetry-native tracing for LLM/agent apps: per-span tokens, cost, latency and errors; TypeScript SDKs or any OTLP exporter (no primary OSS repo). |
 
 ## Evaluation Frameworks
