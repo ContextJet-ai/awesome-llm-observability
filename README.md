@@ -198,6 +198,8 @@ Test and score LLM/agent output. One thing to sort out before you pick a tool: a
 | 🟢 [continuous-eval](https://github.com/relari-ai/continuous-eval) | 517 | Apache-2.0 | Data-driven, modular evaluation for LLM/RAG pipelines. |
 | 🟠 [Galileo](https://github.com/rungalileo/galileo-python) | SDK | Apache-2.0 | Eval + observability platform; SDK OSS, platform commercial. |
 | 🟠 [Openlayer](https://github.com/openlayer-ai/openlayer-python) | SDK | Apache-2.0 | Testing, eval & monitoring platform; SDK OSS, platform commercial. |
+| 🟠 [JudgeMyAI](https://judgemyai.com) | - | commercial | Managed LLM-as-a-judge scoring service with automated eval pipelines and red teaming for production LLM apps. |
+
 
 ## Prompt Management & Experimentation
 
