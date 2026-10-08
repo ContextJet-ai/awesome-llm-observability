@@ -268,6 +268,9 @@ The tooling above is grounded in a fast-moving literature. Key anchors:
 - Chip Huyen - [*Building LLM applications for production*](https://huyenchip.com/2023/04/11/llm-engineering.html).
 - Loop & Retry - [*Measuring agent failure in production*](https://loopandretry.github.io/posts/measuring-agent-failure-in-production/) - which signals actually surface a broken agent in prod, and why request-level success rates hide the failures that matter.
 
+- [How to read an AI quality chart](https://nextreset.ai/guide/ai-quality/) - scope, receipts, and uncertainty checks for avoiding universal claims from narrow coding-model tests.
+
+
 ## Guides & Tools (Original)
 
 Original work in this repo, not just curated links:
