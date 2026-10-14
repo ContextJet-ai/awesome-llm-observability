@@ -267,6 +267,7 @@ The tooling above is grounded in a fast-moving literature. Key anchors:
 - Hamel Husain - [*Your AI Product Needs Evals*](https://hamel.dev/blog/posts/evals/).
 - Chip Huyen - [*Building LLM applications for production*](https://huyenchip.com/2023/04/11/llm-engineering.html).
 - Loop & Retry - [*Measuring agent failure in production*](https://loopandretry.github.io/posts/measuring-agent-failure-in-production/) - which signals actually surface a broken agent in prod, and why request-level success rates hide the failures that matter.
+- [How to Evaluate LLM Applications (2026 Guide)](https://trueiq.si/guides/how-to-evaluate-llm-applications) - step-by-step eval workflow: error analysis, code checks, calibrated LLM judges, CI gates and production sampling.
 
 ## Guides & Tools (Original)
 
