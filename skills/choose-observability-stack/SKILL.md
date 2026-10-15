@@ -25,7 +25,7 @@ There's no single best tool - the right choice depends on constraints. Gather th
 - **Deep in the LangChain ecosystem** → **LangSmith** (tightest integration; SDK OSS, backend commercial).
 - **Enterprise APM already (Datadog/New Relic)** → use their **LLM Observability** product to keep one pane of glass.
 - **Primary need is *evaluation*/testing, not dashboards** → **promptfoo** (prompt/RAG + CI), **DeepEval** (pytest-style), **Ragas** (RAG metrics). Pair with a tracing tool for online scoring.
-- **Regulated / finance / must audit + guardrail** → self-hosted tracing (Langfuse/Phoenix) + **guardrails** (Guardrails AI, LLM Guard for PII/prompt-injection) + strict prompt/PII redaction.
+- **Regulated / finance / must audit + guardrail** → self-hosted tracing (Langfuse/Phoenix) + **guardrails** (Guardrails AI, Presidio for PII, Purple Llama's Prompt Guard for injection) + strict prompt/PII redaction.
 
 ## Common production shape
 

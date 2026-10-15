@@ -40,4 +40,4 @@ Most observability platforms (Langfuse, Phoenix, Opik, Datadog LLM Obs) have bui
 
 ## Grounding
 
-Drift/monitoring for ML has a long lineage (data & concept drift); the LLM-specific additions are online LLM-as-a-judge quality scoring (Zheng et al. 2023, [arXiv:2306.05685](https://arxiv.org/abs/2306.05685)) and token/cost/latency telemetry via the [OpenTelemetry GenAI semantic conventions](https://opentelemetry.io/docs/specs/semconv/gen-ai/). Open-source drift/eval monitoring: [Evidently](https://github.com/evidentlyai/evidently).
+Drift/monitoring for ML has a long lineage (data & concept drift); the LLM-specific additions are online LLM-as-a-judge quality scoring (Zheng et al. 2023, [arXiv:2306.05685](https://arxiv.org/abs/2306.05685)) and token/cost/latency telemetry via the [OpenTelemetry GenAI semantic conventions](https://github.com/open-telemetry/semantic-conventions-genai/blob/main/docs/gen-ai/README.md). Open-source drift/eval monitoring: [Evidently](https://github.com/evidentlyai/evidently).

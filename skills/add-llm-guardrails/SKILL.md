@@ -23,7 +23,7 @@ Guardrails are validation layers on the **input** (before the model) and **outpu
 
 ## Implementation shape
 
-1. **Pick a library** - [Guardrails AI](https://github.com/guardrails-ai/guardrails) (validators + structured output), [LLM Guard](https://github.com/protectai/llm-guard) (PII, injection, toxicity), or [NeMo Guardrails](https://github.com/NVIDIA-NeMo/Guardrails) (programmable rails). Don't hand-roll regexes for security.
+1. **Pick a library** - [Guardrails AI](https://github.com/guardrails-ai/guardrails) (validators + structured output), [Presidio](https://github.com/data-privacy-stack/presidio) + [Purple Llama](https://github.com/meta-llama/PurpleLlama) (PII detection; Llama Guard / Prompt Guard classifiers), or [NeMo Guardrails](https://github.com/NVIDIA-NeMo/Guardrails) (programmable rails). Don't hand-roll regexes for security.
 2. **Wrap input** → validate/sanitize → call model → **wrap output** → validate → return or repair.
 3. **Decide the failure mode per guardrail**: block (hard fail), redact (transform), or flag-and-log (soft). Regulated flows usually block; UX flows often redact.
 4. **Fail closed for security-critical checks** - if the guardrail errors, treat as a failure, not a pass.

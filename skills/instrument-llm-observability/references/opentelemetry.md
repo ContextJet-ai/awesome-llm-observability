@@ -6,7 +6,7 @@ Set these on LLM spans so any OTel backend understands them:
 
 | Attribute | Example | Meaning |
 |---|---|---|
-| `gen_ai.system` | `openai`, `anthropic` | Provider |
+| `gen_ai.provider.name` | `openai`, `anthropic`, `aws.bedrock` | Provider (was `gen_ai.system` before the 2025 rename) |
 | `gen_ai.operation.name` | `chat`, `embeddings` | Operation |
 | `gen_ai.request.model` | `gpt-4o` | Requested model |
 | `gen_ai.response.model` | `gpt-4o-2024-…` | Actual model |
@@ -14,7 +14,7 @@ Set these on LLM spans so any OTel backend understands them:
 | `gen_ai.usage.output_tokens` | `126` | Completion tokens |
 | `gen_ai.request.temperature` | `0.2` | Sampling params |
 
-Prompts/completions are recorded as span events (`gen_ai.content.prompt` / `gen_ai.content.completion`) - gate these behind a flag and redact PII before enabling in production.
+Prompts/completions are opt-in span attributes (`gen_ai.input.messages` / `gen_ai.output.messages`, JSON arrays of `{role, parts}`); the older `gen_ai.content.*` events are deprecated. Gate content capture behind a flag and redact PII before enabling it in production.
 
 ## Minimal init (OpenLLMetry / Traceloop)
 
@@ -36,4 +36,4 @@ with tracer.start_as_current_span("retrieve") as span:
     span.set_attribute("retrieval.doc_count", len(docs))
 ```
 
-Reference: OpenTelemetry GenAI semantic conventions - https://opentelemetry.io/docs/specs/semconv/gen-ai/
+Reference: OpenTelemetry GenAI semantic conventions (moved out of the main semconv repo in 2026) - https://github.com/open-telemetry/semantic-conventions-genai/blob/main/docs/gen-ai/README.md

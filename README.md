@@ -116,7 +116,7 @@ git clone https://github.com/ContextJet-ai/awesome-llm-observability
 
 **Also original in this repo:**
 - 📖 Guide - [**LLM Observability for Finance & Regulated Industries**](guides/llm-observability-for-finance.md)
-- 🛠️ Tool - [**`genai_trace.py`**](tools/genai_trace.py): a minimal, vendor-neutral OpenTelemetry GenAI tracer with a built-in PII-redaction hook (no-op if OTel isn't installed).
+- 🛠️ Tool - [**`genai_trace.py`**](tools/genai_trace.py): a minimal, vendor-neutral OpenTelemetry GenAI tracer (current attribute names: `gen_ai.provider.name`, `gen_ai.input.messages`) with a built-in PII-redaction hook (no-op if OTel isn't installed).
 
 → Browse [`skills/`](skills/), [`guides/`](guides/), [`tools/`](tools/). Contributions welcome.
 
@@ -127,16 +127,16 @@ The question everyone asks first is _"Langfuse or Phoenix or LangSmith or Opik o
 | Platform | Self-host | License | Tracing | Evals | Prompt Mgmt | OTel-native |
 |---|:--:|---|:--:|:--:|:--:|:--:|
 | [Langfuse](https://github.com/langfuse/langfuse) | ✅ | MIT | ✅ | ✅ | ✅ | ✅ |
-| [Arize Phoenix](https://github.com/Arize-ai/phoenix) | ✅ | Elastic v2 | ✅ | ✅ | ➖ | ✅ |
-| [Comet Opik](https://github.com/comet-ml/opik) | ✅ | Apache-2.0 | ✅ | ✅ | ✅ | ➖ |
-| [LangSmith](https://github.com/langchain-ai/langsmith-sdk) | ➖ SaaS | Commercial | ✅ | ✅ | ✅ | ➖ |
-| [Helicone](https://github.com/Helicone/helicone) | ✅ | Apache-2.0 | ✅ | ➖ | ✅ | ➖ |
-| [Latitude](https://github.com/latitude-dev/latitude-llm) | ✅ | MIT | ✅ | ✅ | ✅ | ➖ |
+| [Arize Phoenix](https://github.com/Arize-ai/phoenix) | ✅ | Elastic v2 | ✅ | ✅ | ✅ | ✅ |
+| [Comet Opik](https://github.com/comet-ml/opik) | ✅ | Apache-2.0 | ✅ | ✅ | ✅ | ✅ |
+| [LangSmith](https://github.com/langchain-ai/langsmith-sdk) | ➖ SaaS | Commercial | ✅ | ✅ | ✅ | ✅ |
+| [Helicone](https://github.com/Helicone/helicone) | ✅ | Apache-2.0 | ✅ | ✅ | ✅ | ➖ |
+| [Latitude](https://github.com/latitude-dev/latitude-llm) | ✅ | MIT | ✅ | ✅ | ✅ | ✅ |
 | [Laminar](https://github.com/lmnr-ai/lmnr) | ✅ | Apache-2.0 | ✅ | ✅ | ➖ | ✅ |
 | [MLflow](https://github.com/mlflow/mlflow) | ✅ | Apache-2.0 | ✅ | ✅ | ➖ | ✅ |
 | [OpenLIT](https://github.com/openlit/openlit) | ✅ | Apache-2.0 | ✅ | ✅ | ➖ | ✅ |
 
-✅ first-class · ➖ limited/not the focus. Need help deciding? Use the [`choose-observability-stack`](skills/choose-observability-stack/SKILL.md) skill.
+✅ first-class · ➖ limited/not the focus. OTel-native means the backend ingests OTLP directly (Opik, LangSmith and Latitude all added OTLP endpoints; checked October 2026). Need help deciding? Use the [`choose-observability-stack`](skills/choose-observability-stack/SKILL.md) skill.
 
 ## Tracing & Observability Platforms
 
@@ -236,12 +236,14 @@ Route to many providers through one endpoint; get logging, cost tracking & cachi
 
 The observability layer is standardizing on **OpenTelemetry** - emit these and your traces export to *any* OTel backend.
 
+Two things changed in 2025-26 that older tutorials miss: the GenAI conventions moved out of the main semconv repo into their own, and `gen_ai.system` was renamed `gen_ai.provider.name`, with prompt/completion content moving from span events to the opt-in `gen_ai.input.messages` / `gen_ai.output.messages` attributes. The spec also now covers agent spans, tool calls and MCP.
+
 | Tool | ⭐ | License | Description |
 |---|---|---|---|
 | 🟢 [OpenLLMetry](https://github.com/traceloop/openllmetry) | 7.5k | Apache-2.0 | OTel-based open-source observability for GenAI/LLM apps (Traceloop). |
 | 🟢 [OpenInference](https://github.com/Arize-ai/openinference) | 1.3k | Apache-2.0 | OpenTelemetry instrumentation for AI observability (Arize). |
 | 🟢 [OTel Python Contrib](https://github.com/open-telemetry/opentelemetry-python-contrib) | 1.1k | Apache-2.0 | OTel instrumentation modules, including GenAI. |
-| 🟢 [OTel Semantic Conventions](https://github.com/open-telemetry/semantic-conventions) | 670 | Apache-2.0 | Home of the **GenAI semantic conventions** spec (`gen_ai.*`). |
+| 🟢 [OTel GenAI Semantic Conventions](https://github.com/open-telemetry/semantic-conventions-genai) | 449 | Apache-2.0 | The **GenAI semantic conventions** spec (`gen_ai.*` spans, metrics, events, agent and MCP conventions), now in its own repo with a Python reference implementation. |
 | 🟢 [OpenLLMetry-JS](https://github.com/traceloop/openllmetry-js) | 412 | Apache-2.0 | The TypeScript sibling of OpenLLMetry: OTel instrumentations for the OpenAI, Anthropic, Bedrock, LangChain and LlamaIndex Node SDKs. |
 
 ## Guardrails & Safety Monitoring
@@ -277,7 +279,7 @@ The tooling above is grounded in a fast-moving literature. Key anchors:
 
 ## Learning Resources
 
-- [OpenTelemetry GenAI semantic conventions](https://opentelemetry.io/docs/specs/semconv/gen-ai/) - the emerging standard for LLM telemetry.
+- [OpenTelemetry GenAI semantic conventions](https://github.com/open-telemetry/semantic-conventions-genai/blob/main/docs/gen-ai/README.md) - the standard for LLM telemetry; the old opentelemetry.io pages now just redirect here.
 - [Arize Phoenix docs](https://docs.arize.com/phoenix) & [Langfuse docs](https://langfuse.com/docs) - practical tracing/eval concepts.
 - Hamel Husain - [*Your AI Product Needs Evals*](https://hamel.dev/blog/posts/evals/).
 - Hamel Husain & Shreya Shankar - [*Frequently Asked Questions (And Answers) About AI Evals*](https://hamel.dev/blog/posts/evals-faq/) - error analysis before metrics, binary over Likert, calibrate judges on human labels.

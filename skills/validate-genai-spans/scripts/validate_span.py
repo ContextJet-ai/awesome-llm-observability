@@ -11,13 +11,14 @@ to compute cost, latency, and per-model breakdowns downstream.
     if problems:
         raise ValueError(problems)   # fail your instrumentation test
 
-CC0 - ContextJet.ai. Based on the OTel GenAI semantic conventions.
+CC0 - ContextJet.ai. Based on the OTel GenAI semantic conventions
+(https://github.com/open-telemetry/semantic-conventions-genai).
 """
 
 from __future__ import annotations
 
 REQUIRED = {
-    "gen_ai.system": str,            # e.g. "openai", "anthropic"
+    "gen_ai.provider.name": str,     # e.g. "openai", "anthropic", "aws.bedrock"
     "gen_ai.operation.name": str,    # e.g. "chat", "embeddings"
     "gen_ai.request.model": str,     # requested model id
 }
@@ -48,7 +49,13 @@ def validate_gen_ai_span(attrs, *, strict=False):
     """
     if not isinstance(attrs, dict):
         return ["span attributes must be a dict"]
-    problems = _check(attrs, REQUIRED)
+    # gen_ai.system was renamed to gen_ai.provider.name; accept the old name but say so.
+    if "gen_ai.provider.name" not in attrs and attrs.get("gen_ai.system"):
+        attrs = dict(attrs, **{"gen_ai.provider.name": attrs["gen_ai.system"]})
+        deprecated = ["(deprecated) gen_ai.system is now gen_ai.provider.name"]
+    else:
+        deprecated = []
+    problems = _check(attrs, REQUIRED) + deprecated
     if strict:
         problems += [f"(recommended) {p}" for p in _check(attrs, RECOMMENDED)]
     return problems
@@ -60,11 +67,11 @@ def is_valid_gen_ai_span(attrs, **kw):
 
 if __name__ == "__main__":
     good = {
-        "gen_ai.system": "openai",
+        "gen_ai.provider.name": "openai",
         "gen_ai.operation.name": "chat",
         "gen_ai.request.model": "gpt-4o",
         "gen_ai.usage.input_tokens": 42,
         "gen_ai.usage.output_tokens": 7,
     }
     print("good span ->", validate_gen_ai_span(good, strict=True) or "valid")
-    print("missing model ->", validate_gen_ai_span({"gen_ai.system": "openai", "gen_ai.operation.name": "chat"}))
+    print("missing model ->", validate_gen_ai_span({"gen_ai.provider.name": "openai", "gen_ai.operation.name": "chat"}))

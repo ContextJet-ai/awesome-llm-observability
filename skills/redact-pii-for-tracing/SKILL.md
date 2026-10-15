@@ -18,7 +18,7 @@ Observability captures prompts and completions - which, for a finance or healthc
 
 Insert redaction **between span creation and export** so it always runs:
 
-1. **Detect** PII with a real detector - [Microsoft Presidio](https://github.com/microsoft/presidio), [LLM Guard](https://github.com/protectai/llm-guard), or a domain ruleset (account/card/IBAN/SSN patterns for finance). Don't rely on ad-hoc regex alone.
+1. **Detect** PII with a real detector - [Presidio](https://github.com/data-privacy-stack/presidio) or a domain ruleset (account/card/IBAN/SSN patterns for finance). Don't rely on ad-hoc regex alone.
 2. **Transform** - mask (`****1234`), hash (for join-ability without exposure), or drop the field. Choose per field: costs need amounts, but not the account holder.
 3. **Apply on the OTel span processor / SDK hook** (e.g. an `on_end` span processor, or the platform's masking callback) so no code path bypasses it.
 4. **Redact both directions** - user input *and* model output (models echo PII back).

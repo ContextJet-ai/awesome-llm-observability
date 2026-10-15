@@ -20,7 +20,7 @@ validate_gen_ai_span(span_attributes, strict=True)        # also flag recommende
 assert is_valid_gen_ai_span(span_attributes)              # use in an instrumentation test
 ```
 
-It checks the required fields (`gen_ai.system`, `gen_ai.operation.name`, `gen_ai.request.model`) and, in strict mode, the recommended usage fields (`gen_ai.usage.input_tokens`/`output_tokens`, `gen_ai.response.model`) that cost analysis depends on.
+It checks the required fields (`gen_ai.provider.name`, `gen_ai.operation.name`, `gen_ai.request.model`) and, in strict mode, the recommended usage fields (`gen_ai.usage.input_tokens`/`output_tokens`, `gen_ai.response.model`) that cost analysis depends on. Spans still using the pre-2025 `gen_ai.system` name pass but get a deprecation note, so you can migrate at your own pace.
 
 ## How to apply it
 
@@ -32,7 +32,7 @@ Pairs with `instrument-llm-observability` (which gets the spans emitted in the f
 
 ## Validation
 
-Run the tests: `pytest skills/validate-genai-spans/tests/`. They cover a valid span, each missing required field, empty/wrong-typed values, strict-mode recommended checks, and non-dict input.
+Run the tests: `pytest skills/validate-genai-spans/tests/`. They cover a valid span, each missing required field, empty/wrong-typed values, the deprecated `gen_ai.system` alias, strict-mode recommended checks, and non-dict input.
 
 ## Anti-patterns
 

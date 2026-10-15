@@ -2,8 +2,8 @@
 genai_trace - a minimal, vendor-neutral OpenTelemetry GenAI tracer.
 
 Drop-in tracing for LLM calls using the OpenTelemetry GenAI semantic conventions
-(``gen_ai.*``), so spans export to *any* OTel backend (Langfuse, Phoenix, Opik,
-Datadog, Grafana, …). Includes an optional redaction hook so prompts/completions
+(``gen_ai.*``, as published in the semantic-conventions-genai repo), so spans
+export to *any* OTel backend (Langfuse, Phoenix, Opik, Datadog, Grafana, …). Includes an optional redaction hook so prompts/completions
 can be masked before they leave the process - important for finance / regulated
 data. No hard dependency: if OpenTelemetry isn't installed, it degrades to a no-op.
 
@@ -13,7 +13,7 @@ Usage
 -----
     from genai_trace import trace_llm
 
-    with trace_llm(system="openai", model="gpt-4o", messages=msgs) as span:
+    with trace_llm(provider="openai", model="gpt-4o", messages=msgs) as span:
         resp = client.chat.completions.create(model="gpt-4o", messages=msgs)
         span.record_response(
             output_text=resp.choices[0].message.content,
@@ -28,7 +28,7 @@ Usage
 
 from __future__ import annotations
 
-import time
+import json
 from contextlib import contextmanager
 from typing import Any, Callable, Iterator, Optional, Sequence
 
@@ -64,14 +64,18 @@ class _LLMSpan:
         self.set("gen_ai.usage.input_tokens", input_tokens)
         self.set("gen_ai.usage.output_tokens", output_tokens)
         self.set("gen_ai.response.model", response_model)
-        self.set("gen_ai.response.finish_reason", finish_reason)
+        if finish_reason is not None:
+            self.set("gen_ai.response.finish_reasons", [finish_reason])
         if output_text is not None:
-            self.set("gen_ai.completion", self._redact(output_text))
+            # Opt-in content attribute; one output message in the spec's role/parts shape.
+            self.set("gen_ai.output.messages", json.dumps([
+                {"role": "assistant", "parts": [{"type": "text", "content": self._redact(output_text)}]}
+            ]))
 
 
 @contextmanager
 def trace_llm(
-    system: str,
+    provider: str,
     model: str,
     messages: Optional[Sequence[dict]] = None,
     *,
@@ -82,7 +86,7 @@ def trace_llm(
 ) -> Iterator[_LLMSpan]:
     """Trace one LLM call as a ``gen_ai.*`` span.
 
-    :param system: provider, e.g. "openai", "anthropic".
+    :param provider: ``gen_ai.provider.name``, e.g. "openai", "anthropic", "aws.bedrock".
     :param model: requested model id.
     :param messages: chat messages (recorded only if ``capture_content``).
     :param redact: optional ``str -> str`` applied to any captured content
@@ -96,27 +100,28 @@ def trace_llm(
     _redact = redact or (lambda s: s)
     with _TRACER.start_as_current_span(f"{operation} {model}") as raw:
         llm = _LLMSpan(raw, redact)
-        llm.set("gen_ai.system", system)
+        llm.set("gen_ai.provider.name", provider)
         llm.set("gen_ai.operation.name", operation)
         llm.set("gen_ai.request.model", model)
         llm.set("gen_ai.request.temperature", temperature)
         if capture_content and messages:
-            text = "\n".join(f"{m.get('role','')}: {m.get('content','')}" for m in messages)
-            llm.set("gen_ai.prompt", _redact(text))
-        started = time.time()
+            # gen_ai.input.messages is opt-in in the spec: role + typed parts, serialised as JSON.
+            llm.set("gen_ai.input.messages", json.dumps([
+                {"role": m.get("role", ""), "parts": [{"type": "text", "content": _redact(str(m.get("content", "")))}]}
+                for m in messages
+            ]))
         try:
             yield llm
         except Exception as exc:  # record and re-raise - never swallow
             raw.record_exception(exc)
             raise
-        finally:
-            llm.set("gen_ai.latency_ms", int((time.time() - started) * 1000))
+        # Latency is the span's own duration; no custom attribute needed.
 
 
 def mask_common_pii(text: str) -> str:
     """A conservative example redactor (emails, cards, SSN-like, long digit runs).
 
-    For production / finance, use a real detector (Presidio, LLM Guard) plus a
+    For production / finance, use a real detector (Presidio) plus a
     domain ruleset - this is a safe default, not a complete solution.
     """
     import re

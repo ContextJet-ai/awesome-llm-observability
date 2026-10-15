@@ -25,7 +25,7 @@ It masks emails, credit cards (**Luhn-validated**, so random 16-digit order ids 
 
 1. **Redact before export**, not after: call `scrub()` in your span processor / logging hook so no path bypasses it (see `redact-pii-for-tracing` for where that hook goes).
 2. **Redact both directions:** user input and model output (models echo PII back).
-3. **Layer a real detector for high stakes:** this is a strong default, but for finance/health, add Presidio or LLM Guard plus a domain ruleset. Regex alone misses context-dependent PII.
+3. **Layer a real detector for high stakes:** this is a strong default, but for finance/health, add Presidio plus a domain ruleset. Regex alone misses context-dependent PII.
 
 ## Validation
 

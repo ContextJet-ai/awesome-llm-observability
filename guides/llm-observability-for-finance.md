@@ -26,7 +26,7 @@ Offline eval suites in CI (with pass thresholds that fail the build) plus online
 Input guardrails (prompt injection, PII) and output guardrails (schema validation, groundedness, sensitive-data egress), each **failing closed** for security-critical checks - and each emitting telemetry so you can see attack trends and false-positive rates. See [`add-llm-guardrails`](../skills/add-llm-guardrails/SKILL.md).
 
 **5. Standardize on OpenTelemetry.**
-Emit [OTel GenAI semantic conventions](https://opentelemetry.io/docs/specs/semconv/gen-ai/) so LLM traces flow into the same audited, access-controlled observability platform as the rest of your regulated infrastructure - one pane of glass, one compliance boundary.
+Emit [OTel GenAI semantic conventions](https://github.com/open-telemetry/semantic-conventions-genai/blob/main/docs/gen-ai/README.md) so LLM traces flow into the same audited, access-controlled observability platform as the rest of your regulated infrastructure - one pane of glass, one compliance boundary.
 
 ## A pragmatic rollout
 

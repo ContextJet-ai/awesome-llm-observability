@@ -4,8 +4,7 @@ pii_scrub - mask common PII in text before it reaches a tracing backend.
 Pure-Python, zero dependencies. Detects emails, credit cards (Luhn-validated to
 cut false positives), US SSNs, phone numbers, IPv4 addresses, and IBANs, and
 replaces them with typed placeholders. A safe default for observability
-redaction - for high-stakes/finance use, layer a real detector (Presidio,
-LLM Guard) on top.
+redaction - for high-stakes/finance use, layer a real detector (Presidio) on top.
 
     from pii_scrub import scrub, find_pii
 
