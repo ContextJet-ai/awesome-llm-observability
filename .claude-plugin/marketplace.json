@@ -9,7 +9,7 @@
       "name": "llm-observability",
       "source": "./",
       "description": "26 ready-to-use skills for LLM observability, several shipping runnable unit-tested scripts (cost calculator, OTel span validator, PII scrubber, hallucination consistency check) plus workflows for instrumenting, evaluating, debugging, securing, and monitoring LLM apps.",
-      "version": "1.0.0"
+      "version": "1.1.0"
     }
   ]
 }
