@@ -326,14 +326,15 @@ yes - it runs fine on one node, and that's what the docker-compose quickstarts g
 (`CLICKHOUSE_CLUSTER_ENABLED=false`). Understand what you're trading: a single node has no
 redundancy, so node loss means trace loss, which is why Langfuse labels single-container Docker
 development-only rather than slow. For production they suggest 3 ClickHouse replicas plus 3
-Keeper nodes, ~2 CPU / 8-16 GiB each. Disk is the thing that bites - observability data grows
+Keeper nodes, ~2 CPU / 8-16 GiB each; for the docker-compose route on a single VM they suggest
+4 cores, 16 GiB and ~100 GiB of disk, and say outright that it has no HA, scaling or backups. Disk is the thing that bites - observability data grows
 fast, so set a retention policy on day one and use a volume you can expand.
 
 **If that's more than you want to operate:** stay in the single-process tier (Phoenix for
 tracing + evals, MLflow if you're already on it), or run evals in CI with a framework that keeps
 no server at all and reach for a hosted backend only when you actually need trace history.
 
-Versions move - check the self-hosting docs before you size anything.
+Versions move - check the self-hosting docs before you size anything (the numbers above were checked against Langfuse's docs in October 2026).
 
 ## Contributing
 
