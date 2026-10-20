@@ -8,8 +8,8 @@ Set these on LLM spans so any OTel backend understands them:
 |---|---|---|
 | `gen_ai.provider.name` | `openai`, `anthropic`, `aws.bedrock` | Provider (was `gen_ai.system` before the 2025 rename) |
 | `gen_ai.operation.name` | `chat`, `embeddings` | Operation |
-| `gen_ai.request.model` | `gpt-4o` | Requested model |
-| `gen_ai.response.model` | `gpt-4o-2024-…` | Actual model |
+| `gen_ai.request.model` | `gpt-6.1-sol` | Requested model |
+| `gen_ai.response.model` | `gpt-6.1-sol-2026-…` | Actual model |
 | `gen_ai.usage.input_tokens` | `812` | Prompt tokens |
 | `gen_ai.usage.output_tokens` | `126` | Completion tokens |
 | `gen_ai.request.temperature` | `0.2` | Sampling params |

@@ -69,7 +69,7 @@ if __name__ == "__main__":
     good = {
         "gen_ai.provider.name": "openai",
         "gen_ai.operation.name": "chat",
-        "gen_ai.request.model": "gpt-4o",
+        "gen_ai.request.model": "gpt-6.1-sol",
         "gen_ai.usage.input_tokens": 42,
         "gen_ai.usage.output_tokens": 7,
     }

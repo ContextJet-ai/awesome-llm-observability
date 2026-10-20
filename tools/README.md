@@ -9,8 +9,8 @@ A minimal, **vendor-neutral OpenTelemetry GenAI tracer** - trace any LLM call as
 ```python
 from genai_trace import trace_llm, mask_common_pii
 
-with trace_llm("openai", "gpt-4o", messages, redact=mask_common_pii) as span:
-    resp = client.chat.completions.create(model="gpt-4o", messages=messages)
+with trace_llm("openai", "gpt-6.1-sol", messages, redact=mask_common_pii) as span:
+    resp = client.chat.completions.create(model="gpt-6.1-sol", messages=messages)
     span.record_response(
         output_text=resp.choices[0].message.content,
         input_tokens=resp.usage.prompt_tokens,

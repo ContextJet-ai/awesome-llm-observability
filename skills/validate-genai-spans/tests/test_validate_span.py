@@ -7,7 +7,7 @@ from validate_span import is_valid_gen_ai_span, validate_gen_ai_span  # noqa: E4
 VALID = {
     "gen_ai.provider.name": "openai",
     "gen_ai.operation.name": "chat",
-    "gen_ai.request.model": "gpt-4o",
+    "gen_ai.request.model": "gpt-6.1-sol",
 }
 
 

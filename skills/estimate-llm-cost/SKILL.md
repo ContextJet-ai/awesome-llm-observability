@@ -15,14 +15,14 @@ Cost surprises come from not doing the arithmetic. This skill ships a small, dep
 ```python
 from llm_cost import estimate_cost, project_monthly
 
-estimate_cost(1500, 300, model="gpt-4o")                       # one call, USD
-project_monthly(1500, 300, calls_per_day=5000, model="gpt-4o") # monthly projection
-estimate_cost(2000, 200, model="gpt-4o", cached_input_tokens=1800)  # with prompt caching
+estimate_cost(1500, 300, model="gpt-6.1-sol")                       # one call, USD
+project_monthly(1500, 300, calls_per_day=5000, model="gpt-6.1-sol") # monthly projection
+estimate_cost(2000, 200, model="claude-sonnet-5-5", cached_input_tokens=1800)  # with prompt caching
 ```
 
 Run it directly to see a worked example: `python scripts/llm_cost.py`.
 
-Prices in the `PRICES` table are approximate and change often, so pass `input_price`/`output_price` explicitly when you need exact figures, or edit the table. The arithmetic (not the price table) is what the tests pin down.
+The `PRICES` table holds the current flagship / mid / small model from OpenAI, Anthropic and Google at standard-tier short-context rates, dated by `PRICES_AS_OF`; two Gemini entries are promotional and step up on the date noted in the file. Prices change often, so pass `input_price`/`output_price` explicitly when you need exact figures, or edit the table. The default `cached_discount=0.9` matches OpenAI; Anthropic and Google cache reads are closer to 95% off, so pass `cached_discount=0.95` there. The arithmetic (not the price table) is what the tests pin down.
 
 ## How to apply it
 

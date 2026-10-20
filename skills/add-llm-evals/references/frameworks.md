@@ -7,7 +7,7 @@
 prompts:
   - "Answer using only the context.\n\nContext: {{context}}\nQ: {{question}}"
 providers:
-  - openai:gpt-4o-mini
+  - openai:gpt-6-luna
 tests:
   - vars: { context: "The capital of France is Paris.", question: "Capital of France?" }
     assert:

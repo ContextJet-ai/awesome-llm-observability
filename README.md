@@ -196,6 +196,7 @@ Test and score LLM/agent output. One thing to sort out before you pick a tool: a
 | 🟢 [OpenEvals](https://github.com/langchain-ai/openevals) | 1.2k | MIT | Ready-made evaluators for LLM apps. |
 | 🟢 [AutoEvals](https://github.com/braintrustdata/autoevals) | 1.1k | MIT | Library of model-graded and heuristic scorers (factuality, JSON validity, embedding similarity) usable without the Braintrust platform. |
 | 🟢 [AgentEvals](https://github.com/langchain-ai/agentevals) | 752 | MIT | Evaluators for agent trajectories: did the agent take the expected tool-call path, with strict or LLM-judged matching. |
+| 🟢 [Scenario](https://github.com/langwatch/scenario) | 994 | Apache-2.0 | Simulation-based agent testing: a simulated user drives multi-turn conversations against your agent in pytest/vitest, with judge-scored outcomes. |
 | 🟠 [Braintrust](https://github.com/braintrustdata/braintrust-sdk-python) | SDK | Apache-2.0 | Tracing + prompt-centric evals; SDK OSS, platform commercial. |
 | 🟠 [Azure AI Evaluation (Foundry)](https://github.com/Azure/azure-sdk-for-python/tree/main/sdk/evaluation/azure-ai-evaluation) | SDK | MIT | Microsoft Foundry's evaluation SDK: built-in quality + safety/risk evaluators; runs locally or in Foundry. |
 | 🟢 [HELM](https://github.com/stanford-crfm/helm) | 3.0k | Apache-2.0 | Stanford's Holistic Evaluation of Language Models: broad, multi-metric benchmarking. |
@@ -213,8 +214,12 @@ Test and score LLM/agent output. One thing to sort out before you pick a tool: a
 | 🟢 [Agenta](https://github.com/Agenta-AI/agenta) | 4.8k | MIT | LLMOps platform: prompt playground, versioning, eval & observability. |
 | 🟢 [Pezzo](https://github.com/pezzolabs/pezzo) | 3.3k | Apache-2.0 | Developer-first prompt design, versioning & observability. |
 | 🟠 [PromptLayer](https://github.com/MagnivOrg/prompt-layer-library) | 784 | Apache-2.0 | Log, track, debug & replay prompts and LLM requests. |
+| 🟢 [DSPy](https://github.com/stanfordnlp/dspy) | 38.7k | MIT | Programs instead of prompts: declare the pipeline, then optimizers tune the prompts and few-shots against your metric. |
+| 🟢 [GEPA](https://github.com/gepa-ai/gepa) | 7.1k | MIT | Reflective prompt optimizer: an LLM reads failed traces and proposes prompt edits; also used as a DSPy optimizer. |
+| 🟢 [Prompty](https://github.com/microsoft/prompty) | 1.3k | MIT | Prompt-as-file format with VS Code tooling: a `.prompty` holds model config, template and sample inputs, runnable and traceable from the editor. |
+| 🟢 [Dotprompt](https://github.com/google/dotprompt) | 573 | Apache-2.0 | Google's executable prompt template format (`.prompt` files with frontmatter for model, schema and config), shared across Genkit SDKs. |
 
-> Langfuse and Agenta also provide strong prompt management - listed once under their best-fit category.
+> Langfuse, Phoenix, Opik and Agenta also version prompts - listed once under their best-fit category. DSPy and GEPA are optimizers rather than registries; they pair with any of the above.
 
 ## LLM Gateways & Proxies
 

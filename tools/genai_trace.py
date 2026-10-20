@@ -13,8 +13,8 @@ Usage
 -----
     from genai_trace import trace_llm
 
-    with trace_llm(provider="openai", model="gpt-4o", messages=msgs) as span:
-        resp = client.chat.completions.create(model="gpt-4o", messages=msgs)
+    with trace_llm(provider="openai", model="gpt-6.1-sol", messages=msgs) as span:
+        resp = client.chat.completions.create(model="gpt-6.1-sol", messages=msgs)
         span.record_response(
             output_text=resp.choices[0].message.content,
             input_tokens=resp.usage.prompt_tokens,
@@ -22,7 +22,7 @@ Usage
         )
 
     # redact PII before it hits the backend:
-    with trace_llm("openai", "gpt-4o", msgs, redact=my_redactor) as span:
+    with trace_llm("openai", "gpt-6.1-sol", msgs, redact=my_redactor) as span:
         ...
 """
 
@@ -134,7 +134,7 @@ def mask_common_pii(text: str) -> str:
 
 
 if __name__ == "__main__":  # tiny demo (runs with or without OTel installed)
-    with trace_llm("openai", "gpt-4o", [{"role": "user", "content": "hi, my card is 4111 1111 1111 1111"}],
+    with trace_llm("openai", "gpt-6.1-sol", [{"role": "user", "content": "hi, my card is 4111 1111 1111 1111"}],
                    redact=mask_common_pii) as span:
         span.record_response(output_text="Your card ****", input_tokens=12, output_tokens=3)
     print("mask_common_pii demo:", mask_common_pii("email a@b.com card 4111111111111111 ssn 123-45-6789"))

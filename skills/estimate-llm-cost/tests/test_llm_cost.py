@@ -13,8 +13,13 @@ def test_explicit_prices_are_exact():
 
 def test_model_lookup_matches_table():
     # Stays correct even if PRICES change, because it reads the table.
-    ip, op = PRICES["gpt-4o"]
-    assert estimate_cost(1000, 500, model="gpt-4o") == (1000 * ip + 500 * op) / 1_000_000
+    ip, op = PRICES["gpt-6.1-sol"]
+    assert estimate_cost(1000, 500, model="gpt-6.1-sol") == (1000 * ip + 500 * op) / 1_000_000
+
+
+def test_every_table_entry_is_a_positive_pair():
+    for model, (ip, op) in PRICES.items():
+        assert ip > 0 and op >= ip, model  # output is never cheaper than input at these providers
 
 
 def test_unknown_model_raises():
@@ -34,5 +39,5 @@ def test_prompt_caching_discounts_cached_input():
 
 
 def test_project_monthly_scales():
-    one = estimate_cost(1500, 300, model="gpt-4o")
-    assert project_monthly(1500, 300, calls_per_day=5000, model="gpt-4o") == one * 5000 * 30
+    one = estimate_cost(1500, 300, model="gpt-6.1-sol")
+    assert project_monthly(1500, 300, calls_per_day=5000, model="gpt-6.1-sol") == one * 5000 * 30
