@@ -173,6 +173,7 @@ End-to-end tracing + dashboards for LLM/RAG/agent apps.
 | 🟠 [Apica AI & LLM Observability](https://www.apica.io/ai-llm-observability/) | - | commercial | OpenTelemetry-native AI agent and LLM observability; token cost attribution, multi-agent trace visualization, and telemetry pipeline governance. |
 | 🟠 [Flowlines](https://flowlines.ai/) | - | commercial | Behavioral observability for production AI agents; analyzes traces for drift, repeated failures, context loss, and claim/tool-result mismatches. |
 | 🟠 [Infere](https://infere.com) | - | commercial | OpenAI-compatible gateway plus LLMOps control plane: capability-based model routing, multi-provider fallback, Git-backed prompt repositories, evaluation with regression gates, and per-request traces (no primary OSS repo). |
+| 🟠 [Rius](https://docs.glassflow.ai/rius) | - | MIT (SDK) | Hosted OpenTelemetry-native agent tracing from GlassFlow: LLM calls, tool calls and agent steps with cost per call rolled up per trace, agent and end user; alerts on recurring errors, swallowed errors and tool loops; Claude Code, Codex and Cursor session tracing. Python/TypeScript SDKs or plain OTLP (OpenLLMetry and OpenInference spans are normalized). |
 
 ## Evaluation Frameworks
 
