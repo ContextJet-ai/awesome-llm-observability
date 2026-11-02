@@ -264,6 +264,7 @@ Two things changed in 2025-26 that older tutorials miss: the GenAI conventions m
 | 🔵 [Failproof](https://github.com/FailproofAI/failproofai) | 6.6k | MIT (open-core) | Learns failure modes from agent traces and turns them into enforceable policies. |
 | 🟢 [PyRIT](https://github.com/microsoft/PyRIT) | 4.7k | MIT | Microsoft's risk-identification toolkit: automated multi-turn red-teaming of GenAI systems with pluggable attack strategies and scorers. |
 | 🟢 [Purple Llama](https://github.com/meta-llama/PurpleLlama) | 4.4k | mixed (Llama / MIT) | Meta's LLM security toolset: Llama Guard input/output classifiers, Prompt Guard for injection, and the CyberSecEval benchmarks. |
+| 🟠 [ValGuard](https://valguard.ai/docs/getting-started) | - | commercial | Hosted validation layer that checks LLM and agent responses and tool calls against deterministic rules (JSON schemas, tool-call allowlists, PII checks, token and cost budgets) before downstream code uses them; shadow mode and a free tier. |
 
 ## Self-Hosted / Open-Source First
 
