@@ -301,6 +301,10 @@ The tooling above is grounded in a fast-moving literature. Key anchors:
 - **Prometheus 2** - Kim et al., 2024 ([arXiv:2405.01535](https://arxiv.org/abs/2405.01535)) - an open-weight judge model, for when sending evaluation traffic to a closed API is not an option.
 - **τ-bench** - Yao et al., 2024 ([arXiv:2406.12045](https://arxiv.org/abs/2406.12045)) - tool-agent-user benchmark whose pass^k metric exposes how unreliable agents are across repeated runs of the same task.
 - **Agent hallucination** - *MIRAGE-Bench* ([arXiv:2507.21017](https://arxiv.org/abs/2507.21017)); paper list: [EdinburghNLP/awesome-hallucination-detection](https://github.com/EdinburghNLP/awesome-hallucination-detection).
+- **AgentSight** - Zheng et al., 2025 ([arXiv:2508.02736](https://arxiv.org/abs/2508.02736)) - eBPF tracing at the kernel/TLS boundary, correlating an agent's LLM traffic with the system calls it causes; the paper behind the [AgentSight](https://github.com/eunomia-bpf/agentsight) tool.
+- **llmmas-otel** - Seyedghorban et al., ICST 2026 ([arXiv:2608.24271](https://arxiv.org/abs/2608.24271)) - a framework-agnostic tool combining OpenTelemetry tracing with fault injection to study how failures spread across LLM agents in software-engineering workflows.
+- **Annotrace** - Huang et al., 2026 ([arXiv:2610.23284](https://arxiv.org/abs/2610.23284)) - a workbench for step-level human annotation of agent traces that reads six trace formats, including OTel GenAI, LangSmith and Langfuse.
+- **Structural testing of LLM agents** - Kohl et al., 2026 ([arXiv:2601.18827](https://arxiv.org/abs/2601.18827)) - uses OpenTelemetry traces to assert on an agent's tool-call structure, applying classic structural-testing ideas to agents.
 - **OTel GenAI semantic conventions** - the observability standard (see [Instrumentation & Standards](#instrumentation--standards-opentelemetry-genai)).
 
 ## Learning Resources
