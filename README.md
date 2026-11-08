@@ -270,6 +270,7 @@ Two things changed in 2025-26 that older tutorials miss: the GenAI conventions m
 | 🔵 [Failproof](https://github.com/FailproofAI/failproofai) | 7.4k | MIT (open-core) | Learns failure modes from agent traces and turns them into enforceable policies. |
 | 🟢 [PyRIT](https://github.com/microsoft/PyRIT) | 4.7k | MIT | Microsoft's risk-identification toolkit: automated multi-turn red-teaming of GenAI systems with pluggable attack strategies and scorers. |
 | 🟢 [Purple Llama](https://github.com/meta-llama/PurpleLlama) | 4.5k | mixed (Llama / MIT) | Meta's LLM security toolset: Llama Guard input/output classifiers, Prompt Guard for injection, and the CyberSecEval benchmarks. |
+| 🟠 [Necio](https://necio.app) | - | commercial | Scheduled black-box testing of deployed LLM apps and agents: sends prompt-injection, data-leakage and OWASP LLM Top 10 test conversations to a web chat, bot or API endpoint, grades each answer and flags behavioral drift against a stored baseline; no SDK, findings export to a SIEM (no OSS repo). |
 
 ## Agent Harness & Context
 
