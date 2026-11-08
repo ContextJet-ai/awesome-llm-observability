@@ -182,13 +182,11 @@ Test and score LLM/agent output. One thing to sort out before you pick a tool: a
 | Tool | ⭐ | License | Description |
 |---|---|---|---|
 | 🟢 [promptfoo](https://github.com/promptfoo/promptfoo) | 26.7k | MIT | Test/eval prompts, agents & RAG; red-teaming and CI/CD. |
-| 🟢 [OpenAI Evals](https://github.com/openai/evals) | 19.7k | MIT | Framework + registry of benchmarks for evaluating LLMs. |
 | 🟢 [DeepEval](https://github.com/confident-ai/deepeval) | 19.2k | Apache-2.0 | "Pytest for LLMs" - 40+ metrics for LLM output evaluation. |
 | 🟢 [Ragas](https://github.com/vibrantlabsai/ragas) | 16.2k | Apache-2.0 | Evaluation toolkit for LLM/RAG applications. |
 | 🟢 [LM Evaluation Harness](https://github.com/EleutherAI/lm-evaluation-harness) | 14.4k | MIT | Few-shot benchmark evaluation of language models (EleutherAI). |
 | 🟢 [Evidently](https://github.com/evidentlyai/evidently) | 8.0k | Apache-2.0 | ML + LLM observability/eval with 100+ metrics. |
 | 🟢 [Giskard](https://github.com/Giskard-AI/giskard-oss) | 5.9k | Apache-2.0 | Open-source eval & testing for LLM agents. |
-| 🟢 [Deepchecks](https://github.com/deepchecks/deepchecks) | 4.1k | AGPL-3.0 | Continuous validation/testing for ML & LLM. |
 | 🟢 [TruLens](https://github.com/truera/trulens) | 3.6k | MIT | Evaluation & tracking for LLM experiments and agents. |
 | 🟢 [Inspect](https://github.com/UKGovernmentBEIS/inspect_ai) | 3.2k | MIT | LLM evaluation framework from the UK AI Safety Institute. |
 | 🟢 [DeepTeam](https://github.com/confident-ai/deepteam) | 3.1k | Apache-2.0 | Red-teaming framework for LLMs & agents (by the DeepEval team). |
