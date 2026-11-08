@@ -158,6 +158,7 @@ End-to-end tracing + dashboards for LLM/RAG/agent apps.
 | 🟢 [Laminar](https://github.com/lmnr-ai/lmnr) | 3.5k | Apache-2.0 | Open-source observability + evals, purpose-built for AI agents. |
 | 🟢 [LangWatch](https://github.com/langwatch/langwatch) | 5.0k | Apache-2.0 | Evals + agent testing + observability platform. |
 | 🟢 [OpenLIT](https://github.com/openlit/openlit) | 2.9k | Apache-2.0 | OTel-native LLM observability with GPU monitoring, guardrails & evals. |
+| 🟢 [Future AGI](https://github.com/future-agi/future-agi) | 2.2k | Apache-2.0 | One platform for OTel-based tracing, evals, guardrails and an OpenAI-compatible gateway (the team behind traceAI). |
 | 🔵 [TraceRoot](https://github.com/traceroot-ai/traceroot) | 1.4k | Apache-2.0 (ee/ dirs excluded) | Agent tracing platform that pairs OpenTelemetry traces and logs with an AI assistant for root-causing failed runs. |
 | 🟢 [W&B Weave](https://github.com/wandb/weave) | 1.1k | Apache-2.0 | Weights & Biases toolkit for tracing/eval of LLM apps (SaaS backend). |
 | 🟠 [LangSmith](https://github.com/langchain-ai/langsmith-sdk) | 1.1k (SDK) | MIT (SDK) | Tracing/eval platform from LangChain; SDK is OSS, backend commercial. |
@@ -258,6 +259,7 @@ Two things changed in 2025-26 that older tutorials miss: the GenAI conventions m
 | 🟢 [OTel GenAI Semantic Conventions](https://github.com/open-telemetry/semantic-conventions-genai) | 506 | Apache-2.0 | The **GenAI semantic conventions** spec (`gen_ai.*` spans, metrics, events, agent and MCP conventions), now in its own repo with a Python reference implementation. |
 | 🟢 [OpenLLMetry-JS](https://github.com/traceloop/openllmetry-js) | 412 | Apache-2.0 | The TypeScript sibling of OpenLLMetry: OTel instrumentations for the OpenAI, Anthropic, Bedrock, LangChain and LlamaIndex Node SDKs. |
 | 🟢 [traceAI](https://github.com/future-agi/traceAI) | 266 | Apache-2.0 | OpenTelemetry instrumentations for LLM SDKs and agent frameworks across Python and TypeScript, exportable to any OTel backend (Future AGI). |
+| 🟢 [hermes-otel](https://github.com/briancaffey/hermes-otel) | 82 | Apache-2.0 | OTel plugin for Hermes Agent that emits both `gen_ai.*` and OpenInference attributes, so traces land in most open or closed backends. |
 
 ## Guardrails & Safety Monitoring
 
