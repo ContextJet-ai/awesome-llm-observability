@@ -32,6 +32,7 @@ The tooling for watching LLM apps in production is a fast-moving mess of overlap
 - [LLM Gateways & Proxies](#llm-gateways--proxies)
 - [Instrumentation & Standards](#instrumentation--standards-opentelemetry-genai)
 - [Guardrails & Safety Monitoring](#guardrails--safety-monitoring)
+- [Agent Harness & Context](#agent-harness--context)
 - [Self-Hosted / Open-Source First](#self-hosted--open-source-first)
 - [Research & Benchmarks](#research--benchmarks)
 - [Learning Resources](#learning-resources)
@@ -269,6 +270,19 @@ Two things changed in 2025-26 that older tutorials miss: the GenAI conventions m
 | 🔵 [Failproof](https://github.com/FailproofAI/failproofai) | 7.4k | MIT (open-core) | Learns failure modes from agent traces and turns them into enforceable policies. |
 | 🟢 [PyRIT](https://github.com/microsoft/PyRIT) | 4.7k | MIT | Microsoft's risk-identification toolkit: automated multi-turn red-teaming of GenAI systems with pluggable attack strategies and scorers. |
 | 🟢 [Purple Llama](https://github.com/meta-llama/PurpleLlama) | 4.5k | mixed (Llama / MIT) | Meta's LLM security toolset: Llama Guard input/output classifiers, Prompt Guard for injection, and the CyberSecEval benchmarks. |
+
+## Agent Harness & Context
+
+Not observability tools themselves. These sit inside the agent loop and change what it sends, remembers and does, so they are the parts you end up tracing: browser and desktop actions show up as tool spans, and memory or compression plugins change the token counts and the context the model actually sees.
+
+| Tool | ⭐ | License | Description |
+|---|---|---|---|
+| 🟢 [claude-mem](https://github.com/thedotmack/claude-mem) | 114.6k | Apache-2.0 | Persistent memory for coding agents: records session activity, compresses it with a model and injects it into later sessions. Worth tracing because the injected context changes cost and behavior. |
+| 🟢 [agent-browser](https://github.com/vercel-labs/agent-browser) | 47.1k | Apache-2.0 | Browser automation CLI for agents (Vercel Labs); each navigation, click and snapshot is a tool call to trace. |
+| 🟢 [agent-desktop](https://github.com/vercel-labs/agent-desktop) | 19.2k | Apache-2.0 | Computer-use CLI for agents (Vercel Labs), the desktop counterpart to agent-browser. |
+| 🟢 [billion-context](https://github.com/ranxianglei/billion-context) | 4.8k | MIT | Context-compression plugin for very long sessions. It claims about 5x fewer tokens, but no benchmark has been published, so measure it against your own traces. |
+
+Related collections: [google/skills](https://github.com/google/skills) and [scenario-labs/skills](https://github.com/scenario-labs/skills) are agent-skill packs for other domains, useful as a reference for how skill collections are laid out.
 
 ## Self-Hosted / Open-Source First
 
