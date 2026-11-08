@@ -71,3 +71,23 @@ def test_apply_updates_rewrites_cell_and_keeps_suffix():
 def test_fetch_repo_uses_injected_fetcher():
     got = fetch_repo("a", "b", fetcher=lambda o, r: {"stars": 42, "archived": False})
     assert got["stars"] == 42
+
+
+def test_stale_flag_uses_last_commit():
+    import datetime as dt
+    from refresh_stars import is_stale
+    now = dt.datetime(2026, 11, 8, tzinfo=dt.timezone.utc)
+    assert is_stale("2026-04-14T15:29:57Z", now)        # ~208 days
+    assert not is_stale("2026-10-01T00:00:00Z", now)
+    assert not is_stale(None, now)                       # unknown date isn't flagged
+    rows = parse_star_rows(SAMPLE)
+    data = {
+        ("langfuse", "langfuse"): {"stars": 30400, "archived": False, "last_commit": "2026-11-07T00:00:00Z"},
+        ("Scale3-Labs", "langtrace"): {"stars": 1200, "archived": False, "last_commit": "2025-11-24T11:36:18Z"},
+        ("DataDog", "dd-trace-py"): {"stars": 600, "archived": False},
+    }
+    _, flags = plan_updates(rows, data, now)
+    issues = {f["repo"]: f["issue"] for f in flags}
+    assert issues == {"Scale3-Labs/langtrace": "no commit since 2025-11-24"}
+    # without a clock the freshness check is off, matching the old behavior
+    assert plan_updates(rows, data)[1] == []

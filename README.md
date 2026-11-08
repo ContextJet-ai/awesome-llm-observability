@@ -32,6 +32,7 @@ The tooling for watching LLM apps in production is a fast-moving mess of overlap
 - [LLM Gateways & Proxies](#llm-gateways--proxies)
 - [Instrumentation & Standards](#instrumentation--standards-opentelemetry-genai)
 - [Guardrails & Safety Monitoring](#guardrails--safety-monitoring)
+- [Agent Harness & Context](#agent-harness--context)
 - [Self-Hosted / Open-Source First](#self-hosted--open-source-first)
 - [Research & Benchmarks](#research--benchmarks)
 - [Learning Resources](#learning-resources)
@@ -152,10 +153,12 @@ End-to-end tracing + dashboards for LLM/RAG/agent apps.
 | 🟢 [Microsoft PromptFlow](https://github.com/microsoft/promptflow) | 11.3k | MIT | Build, test, deploy & monitor LLM apps end-to-end. |
 | 🟢 [Arize Phoenix](https://github.com/Arize-ai/phoenix) | 12.1k | Elastic v2 | OpenTelemetry-native AI observability & evaluation; runs locally or self-hosted. |
 | 🟢 [Helicone](https://github.com/Helicone/helicone) | 6.3k | Apache-2.0 | One-line **proxy** observability - change the base URL, log every request/cost/error. |
+| 🟢 [Coze Loop](https://github.com/coze-dev/coze-loop) | 5.8k | Apache-2.0 | Agent development and ops platform from ByteDance's Coze team: prompt debugging, evaluation sets, trace observation and monitoring. |
 | 🟢 [Latitude](https://github.com/latitude-dev/latitude-llm) | 4.7k | MIT | Open-source LLM monitoring + prompt-engineering platform. |
 | 🟢 [Laminar](https://github.com/lmnr-ai/lmnr) | 3.5k | Apache-2.0 | Open-source observability + evals, purpose-built for AI agents. |
 | 🟢 [LangWatch](https://github.com/langwatch/langwatch) | 5.0k | Apache-2.0 | Evals + agent testing + observability platform. |
 | 🟢 [OpenLIT](https://github.com/openlit/openlit) | 2.9k | Apache-2.0 | OTel-native LLM observability with GPU monitoring, guardrails & evals. |
+| 🔵 [TraceRoot](https://github.com/traceroot-ai/traceroot) | 1.4k | Apache-2.0 (ee/ dirs excluded) | Agent tracing platform that pairs OpenTelemetry traces and logs with an AI assistant for root-causing failed runs. |
 | 🟢 [W&B Weave](https://github.com/wandb/weave) | 1.1k | Apache-2.0 | Weights & Biases toolkit for tracing/eval of LLM apps (SaaS backend). |
 | 🟠 [LangSmith](https://github.com/langchain-ai/langsmith-sdk) | 1.1k (SDK) | MIT (SDK) | Tracing/eval platform from LangChain; SDK is OSS, backend commercial. |
 | 🟠 [Datadog LLM Observability](https://github.com/DataDog/dd-trace-py) | 654 (tracer) | BSD-3 | LLM Observability product on top of Datadog APM. |
@@ -167,6 +170,7 @@ End-to-end tracing + dashboards for LLM/RAG/agent apps.
 | 🟢 [Pydantic Logfire](https://github.com/pydantic/logfire) | 4.5k | MIT | OpenTelemetry-based observability for LLM and agent apps, from the Pydantic team. |
 | 🔵 [ClawMetry](https://github.com/vivekchand/clawmetry) | 436 | MIT (open-core) | Reads coding-agent session logs from disk rather than proxying calls; sessions, tool calls, tokens and cost for Claude Code, Codex, Cursor, Aider and others. |
 | 🟠 [telemetry.dev](https://telemetry.dev) | - | commercial | OpenTelemetry-native tracing for LLM/agent apps: per-span tokens, cost, latency and errors; TypeScript SDKs or any OTLP exporter (no primary OSS repo). |
+| 🟢 [AgentSight](https://github.com/eunomia-bpf/agentsight) | 777 | MIT | eBPF-based tracing at the system boundary: captures TLS-decrypted LLM traffic and the process/file activity it triggers, with no changes to the agent's code. |
 | 🟢 [Overmind](https://github.com/overmind-core/overmind) | 744 | AGPL-3.0 (MIT SDK) | OpenTelemetry-native tracing and evals, where the same traces become datasets for fine-tuning and serving small open-weight models. |
 | 🟢 [OrcaReplay](https://github.com/Continuum-AI-Corp/OrcaReplay) | 295 | Apache-2.0 | Records a coding-agent run below the harness and replays it offline from the recorded bytes with no model called; a run can be forked at any step onto a different model. |
 | 🟠 [The Context Company](https://github.com/The-Context-Company/observatory) | 124 (SDK) | MIT (SDK) | Agent observability and customer analytics: recurring patterns and account-level insights from production conversations and traces; SDK is OSS, platform commercial. |
@@ -182,13 +186,13 @@ Test and score LLM/agent output. One thing to sort out before you pick a tool: a
 | Tool | ⭐ | License | Description |
 |---|---|---|---|
 | 🟢 [promptfoo](https://github.com/promptfoo/promptfoo) | 26.7k | MIT | Test/eval prompts, agents & RAG; red-teaming and CI/CD. |
-| 🟢 [OpenAI Evals](https://github.com/openai/evals) | 19.7k | MIT | Framework + registry of benchmarks for evaluating LLMs. |
 | 🟢 [DeepEval](https://github.com/confident-ai/deepeval) | 19.2k | Apache-2.0 | "Pytest for LLMs" - 40+ metrics for LLM output evaluation. |
 | 🟢 [Ragas](https://github.com/vibrantlabsai/ragas) | 16.2k | Apache-2.0 | Evaluation toolkit for LLM/RAG applications. |
 | 🟢 [LM Evaluation Harness](https://github.com/EleutherAI/lm-evaluation-harness) | 14.4k | MIT | Few-shot benchmark evaluation of language models (EleutherAI). |
+| 🟢 [MCP Inspector](https://github.com/modelcontextprotocol/inspector) | 11.3k | MIT / Apache-2.0 | Official interactive tester for MCP servers: connect over stdio or HTTP, call tools, read resources and inspect the raw protocol messages. |
 | 🟢 [Evidently](https://github.com/evidentlyai/evidently) | 8.0k | Apache-2.0 | ML + LLM observability/eval with 100+ metrics. |
 | 🟢 [Giskard](https://github.com/Giskard-AI/giskard-oss) | 5.9k | Apache-2.0 | Open-source eval & testing for LLM agents. |
-| 🟢 [Deepchecks](https://github.com/deepchecks/deepchecks) | 4.1k | AGPL-3.0 | Continuous validation/testing for ML & LLM. |
+| 🔵 [Kiln](https://github.com/Kiln-AI/Kiln) | 5.3k | MIT (libs) / EULA (app) | Desktop app and Python library for evals, synthetic data, dataset management and fine-tuning; the libraries are MIT, the desktop app is free under a EULA. |
 | 🟢 [TruLens](https://github.com/truera/trulens) | 3.6k | MIT | Evaluation & tracking for LLM experiments and agents. |
 | 🟢 [Inspect](https://github.com/UKGovernmentBEIS/inspect_ai) | 3.2k | MIT | LLM evaluation framework from the UK AI Safety Institute. |
 | 🟢 [DeepTeam](https://github.com/confident-ai/deepteam) | 3.1k | Apache-2.0 | Red-teaming framework for LLMs & agents (by the DeepEval team). |
@@ -237,7 +241,8 @@ Route to many providers through one endpoint; get logging, cost tracking & cachi
 | 🟢 [Bifrost](https://github.com/maximhq/bifrost) | 9.3k | Apache-2.0 | Fast AI gateway routing to 1,000+ models with logging, cost tracking & governance. |
 | 🟢 [Kong AI Gateway](https://github.com/Kong/kong) | 44.3k | Apache-2.0 | AI plugins for the Kong API gateway: multi-provider proxying, token-based rate limiting, prompt guards and request/response logging. |
 | 🟢 [Higress](https://github.com/higress-group/higress) | 9.7k | Apache-2.0 | Envoy-based AI-native API gateway from Alibaba: provider routing, token rate limits, caching and OTel tracing for LLM traffic. |
-| 🟢 [Agent Router (Envoy AI Gateway)](https://github.com/theagentrouter/agent-router) | 2.3k | Apache-2.0 | Envoy Gateway extension for unified access to LLM providers with token-aware rate limiting and usage metrics. |
+| 🟢 [agentgateway](https://github.com/agentgateway/agentgateway) | 6.0k | Apache-2.0 | Rust proxy for agent traffic that understands MCP and A2A as well as LLM APIs; adds auth, rate limits and OTel metrics/traces per tool call. |
+| 🟢 [Agent Router (Envoy AI Gateway)](https://github.com/theagentrouter/agent-router) | 2.4k | Apache-2.0 | Envoy Gateway extension for unified access to LLM providers with token-aware rate limiting and usage metrics. |
 
 ## Instrumentation & Standards (OpenTelemetry GenAI)
 
@@ -252,6 +257,7 @@ Two things changed in 2025-26 that older tutorials miss: the GenAI conventions m
 | 🟢 [OTel Python Contrib](https://github.com/open-telemetry/opentelemetry-python-contrib) | 1.1k | Apache-2.0 | OTel instrumentation modules, including GenAI. |
 | 🟢 [OTel GenAI Semantic Conventions](https://github.com/open-telemetry/semantic-conventions-genai) | 506 | Apache-2.0 | The **GenAI semantic conventions** spec (`gen_ai.*` spans, metrics, events, agent and MCP conventions), now in its own repo with a Python reference implementation. |
 | 🟢 [OpenLLMetry-JS](https://github.com/traceloop/openllmetry-js) | 412 | Apache-2.0 | The TypeScript sibling of OpenLLMetry: OTel instrumentations for the OpenAI, Anthropic, Bedrock, LangChain and LlamaIndex Node SDKs. |
+| 🟢 [traceAI](https://github.com/future-agi/traceAI) | 266 | Apache-2.0 | OpenTelemetry instrumentations for LLM SDKs and agent frameworks across Python and TypeScript, exportable to any OTel backend (Future AGI). |
 
 ## Guardrails & Safety Monitoring
 
@@ -264,6 +270,19 @@ Two things changed in 2025-26 that older tutorials miss: the GenAI conventions m
 | 🔵 [Failproof](https://github.com/FailproofAI/failproofai) | 7.4k | MIT (open-core) | Learns failure modes from agent traces and turns them into enforceable policies. |
 | 🟢 [PyRIT](https://github.com/microsoft/PyRIT) | 4.7k | MIT | Microsoft's risk-identification toolkit: automated multi-turn red-teaming of GenAI systems with pluggable attack strategies and scorers. |
 | 🟢 [Purple Llama](https://github.com/meta-llama/PurpleLlama) | 4.5k | mixed (Llama / MIT) | Meta's LLM security toolset: Llama Guard input/output classifiers, Prompt Guard for injection, and the CyberSecEval benchmarks. |
+
+## Agent Harness & Context
+
+Not observability tools themselves. These sit inside the agent loop and change what it sends, remembers and does, so they are the parts you end up tracing: browser and desktop actions show up as tool spans, and memory or compression plugins change the token counts and the context the model actually sees.
+
+| Tool | ⭐ | License | Description |
+|---|---|---|---|
+| 🟢 [claude-mem](https://github.com/thedotmack/claude-mem) | 114.6k | Apache-2.0 | Persistent memory for coding agents: records session activity, compresses it with a model and injects it into later sessions. Worth tracing because the injected context changes cost and behavior. |
+| 🟢 [agent-browser](https://github.com/vercel-labs/agent-browser) | 47.1k | Apache-2.0 | Browser automation CLI for agents (Vercel Labs); each navigation, click and snapshot is a tool call to trace. |
+| 🟢 [agent-desktop](https://github.com/vercel-labs/agent-desktop) | 19.2k | Apache-2.0 | Computer-use CLI for agents (Vercel Labs), the desktop counterpart to agent-browser. |
+| 🟢 [billion-context](https://github.com/ranxianglei/billion-context) | 4.8k | MIT | Context-compression plugin for very long sessions. It claims about 5x fewer tokens, but no benchmark has been published, so measure it against your own traces. |
+
+Related collections: [google/skills](https://github.com/google/skills) and [scenario-labs/skills](https://github.com/scenario-labs/skills) are agent-skill packs for other domains, useful as a reference for how skill collections are laid out.
 
 ## Self-Hosted / Open-Source First
 
@@ -282,6 +301,10 @@ The tooling above is grounded in a fast-moving literature. Key anchors:
 - **Prometheus 2** - Kim et al., 2024 ([arXiv:2405.01535](https://arxiv.org/abs/2405.01535)) - an open-weight judge model, for when sending evaluation traffic to a closed API is not an option.
 - **τ-bench** - Yao et al., 2024 ([arXiv:2406.12045](https://arxiv.org/abs/2406.12045)) - tool-agent-user benchmark whose pass^k metric exposes how unreliable agents are across repeated runs of the same task.
 - **Agent hallucination** - *MIRAGE-Bench* ([arXiv:2507.21017](https://arxiv.org/abs/2507.21017)); paper list: [EdinburghNLP/awesome-hallucination-detection](https://github.com/EdinburghNLP/awesome-hallucination-detection).
+- **AgentSight** - Zheng et al., 2025 ([arXiv:2508.02736](https://arxiv.org/abs/2508.02736)) - eBPF tracing at the kernel/TLS boundary, correlating an agent's LLM traffic with the system calls it causes; the paper behind the [AgentSight](https://github.com/eunomia-bpf/agentsight) tool.
+- **llmmas-otel** - Seyedghorban et al., ICST 2026 ([arXiv:2608.24271](https://arxiv.org/abs/2608.24271)) - a framework-agnostic tool combining OpenTelemetry tracing with fault injection to study how failures spread across LLM agents in software-engineering workflows.
+- **Annotrace** - Huang et al., 2026 ([arXiv:2610.23284](https://arxiv.org/abs/2610.23284)) - a workbench for step-level human annotation of agent traces that reads six trace formats, including OTel GenAI, LangSmith and Langfuse.
+- **Structural testing of LLM agents** - Kohl et al., 2026 ([arXiv:2601.18827](https://arxiv.org/abs/2601.18827)) - uses OpenTelemetry traces to assert on an agent's tool-call structure, applying classic structural-testing ideas to agents.
 - **OTel GenAI semantic conventions** - the observability standard (see [Instrumentation & Standards](#instrumentation--standards-opentelemetry-genai)).
 
 ## Learning Resources
