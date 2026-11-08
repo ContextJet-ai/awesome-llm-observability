@@ -233,6 +233,7 @@ Route to many providers through one endpoint; get logging, cost tracking & cachi
 | 🟢 [Helicone](https://github.com/Helicone/helicone) | 6.3k | Apache-2.0 | Proxy-first observability (also listed under Tracing). |
 | 🟠 Cloudflare AI Gateway | - | commercial | Managed AI gateway with analytics/logging/caching (no OSS repo). |
 | 🟠 OpenRouter | - | commercial | Unified API/marketplace routing to many LLMs with usage analytics. |
+| 🟠 [OrcaRouter](https://www.orcarouter.ai) | - | commercial | OpenAI-compatible gateway (`https://api.orcarouter.ai/v1`) that routes many providers behind one endpoint and adds gateway-level screening of prompts, responses and tool calls for agents (no OSS repo). |
 | 🟠 [Standard Compute](https://standardcompute.com) | - | commercial | Hosted OpenAI-compatible gateway for coding agents and teams: routes each request to the cheapest capable model with provider fallback, opt-in Europe/US region rules (company, team or key), no prompt training or storage, per-developer keys with monthly budgets and an audit log (no OSS repo). |
 | 🟢 [Bifrost](https://github.com/maximhq/bifrost) | 9.3k | Apache-2.0 | Fast AI gateway routing to 1,000+ models with logging, cost tracking & governance. |
 | 🟢 [Kong AI Gateway](https://github.com/Kong/kong) | 44.3k | Apache-2.0 | AI plugins for the Kong API gateway: multi-provider proxying, token-based rate limiting, prompt guards and request/response logging. |
