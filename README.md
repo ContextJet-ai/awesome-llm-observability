@@ -152,10 +152,12 @@ End-to-end tracing + dashboards for LLM/RAG/agent apps.
 | 🟢 [Microsoft PromptFlow](https://github.com/microsoft/promptflow) | 11.3k | MIT | Build, test, deploy & monitor LLM apps end-to-end. |
 | 🟢 [Arize Phoenix](https://github.com/Arize-ai/phoenix) | 12.1k | Elastic v2 | OpenTelemetry-native AI observability & evaluation; runs locally or self-hosted. |
 | 🟢 [Helicone](https://github.com/Helicone/helicone) | 6.3k | Apache-2.0 | One-line **proxy** observability - change the base URL, log every request/cost/error. |
+| 🟢 [Coze Loop](https://github.com/coze-dev/coze-loop) | 5.8k | Apache-2.0 | Agent development and ops platform from ByteDance's Coze team: prompt debugging, evaluation sets, trace observation and monitoring. |
 | 🟢 [Latitude](https://github.com/latitude-dev/latitude-llm) | 4.7k | MIT | Open-source LLM monitoring + prompt-engineering platform. |
 | 🟢 [Laminar](https://github.com/lmnr-ai/lmnr) | 3.5k | Apache-2.0 | Open-source observability + evals, purpose-built for AI agents. |
 | 🟢 [LangWatch](https://github.com/langwatch/langwatch) | 5.0k | Apache-2.0 | Evals + agent testing + observability platform. |
 | 🟢 [OpenLIT](https://github.com/openlit/openlit) | 2.9k | Apache-2.0 | OTel-native LLM observability with GPU monitoring, guardrails & evals. |
+| 🔵 [TraceRoot](https://github.com/traceroot-ai/traceroot) | 1.4k | Apache-2.0 (ee/ dirs excluded) | Agent tracing platform that pairs OpenTelemetry traces and logs with an AI assistant for root-causing failed runs. |
 | 🟢 [W&B Weave](https://github.com/wandb/weave) | 1.1k | Apache-2.0 | Weights & Biases toolkit for tracing/eval of LLM apps (SaaS backend). |
 | 🟠 [LangSmith](https://github.com/langchain-ai/langsmith-sdk) | 1.1k (SDK) | MIT (SDK) | Tracing/eval platform from LangChain; SDK is OSS, backend commercial. |
 | 🟠 [Datadog LLM Observability](https://github.com/DataDog/dd-trace-py) | 654 (tracer) | BSD-3 | LLM Observability product on top of Datadog APM. |
@@ -167,6 +169,7 @@ End-to-end tracing + dashboards for LLM/RAG/agent apps.
 | 🟢 [Pydantic Logfire](https://github.com/pydantic/logfire) | 4.5k | MIT | OpenTelemetry-based observability for LLM and agent apps, from the Pydantic team. |
 | 🔵 [ClawMetry](https://github.com/vivekchand/clawmetry) | 436 | MIT (open-core) | Reads coding-agent session logs from disk rather than proxying calls; sessions, tool calls, tokens and cost for Claude Code, Codex, Cursor, Aider and others. |
 | 🟠 [telemetry.dev](https://telemetry.dev) | - | commercial | OpenTelemetry-native tracing for LLM/agent apps: per-span tokens, cost, latency and errors; TypeScript SDKs or any OTLP exporter (no primary OSS repo). |
+| 🟢 [AgentSight](https://github.com/eunomia-bpf/agentsight) | 777 | MIT | eBPF-based tracing at the system boundary: captures TLS-decrypted LLM traffic and the process/file activity it triggers, with no changes to the agent's code. |
 | 🟢 [Overmind](https://github.com/overmind-core/overmind) | 744 | AGPL-3.0 (MIT SDK) | OpenTelemetry-native tracing and evals, where the same traces become datasets for fine-tuning and serving small open-weight models. |
 | 🟢 [OrcaReplay](https://github.com/Continuum-AI-Corp/OrcaReplay) | 295 | Apache-2.0 | Records a coding-agent run below the harness and replays it offline from the recorded bytes with no model called; a run can be forked at any step onto a different model. |
 | 🟠 [The Context Company](https://github.com/The-Context-Company/observatory) | 124 (SDK) | MIT (SDK) | Agent observability and customer analytics: recurring patterns and account-level insights from production conversations and traces; SDK is OSS, platform commercial. |
@@ -185,8 +188,10 @@ Test and score LLM/agent output. One thing to sort out before you pick a tool: a
 | 🟢 [DeepEval](https://github.com/confident-ai/deepeval) | 19.2k | Apache-2.0 | "Pytest for LLMs" - 40+ metrics for LLM output evaluation. |
 | 🟢 [Ragas](https://github.com/vibrantlabsai/ragas) | 16.2k | Apache-2.0 | Evaluation toolkit for LLM/RAG applications. |
 | 🟢 [LM Evaluation Harness](https://github.com/EleutherAI/lm-evaluation-harness) | 14.4k | MIT | Few-shot benchmark evaluation of language models (EleutherAI). |
+| 🟢 [MCP Inspector](https://github.com/modelcontextprotocol/inspector) | 11.3k | MIT / Apache-2.0 | Official interactive tester for MCP servers: connect over stdio or HTTP, call tools, read resources and inspect the raw protocol messages. |
 | 🟢 [Evidently](https://github.com/evidentlyai/evidently) | 8.0k | Apache-2.0 | ML + LLM observability/eval with 100+ metrics. |
 | 🟢 [Giskard](https://github.com/Giskard-AI/giskard-oss) | 5.9k | Apache-2.0 | Open-source eval & testing for LLM agents. |
+| 🔵 [Kiln](https://github.com/Kiln-AI/Kiln) | 5.3k | MIT (libs) / EULA (app) | Desktop app and Python library for evals, synthetic data, dataset management and fine-tuning; the libraries are MIT, the desktop app is free under a EULA. |
 | 🟢 [TruLens](https://github.com/truera/trulens) | 3.6k | MIT | Evaluation & tracking for LLM experiments and agents. |
 | 🟢 [Inspect](https://github.com/UKGovernmentBEIS/inspect_ai) | 3.2k | MIT | LLM evaluation framework from the UK AI Safety Institute. |
 | 🟢 [DeepTeam](https://github.com/confident-ai/deepteam) | 3.1k | Apache-2.0 | Red-teaming framework for LLMs & agents (by the DeepEval team). |
@@ -235,7 +240,8 @@ Route to many providers through one endpoint; get logging, cost tracking & cachi
 | 🟢 [Bifrost](https://github.com/maximhq/bifrost) | 9.3k | Apache-2.0 | Fast AI gateway routing to 1,000+ models with logging, cost tracking & governance. |
 | 🟢 [Kong AI Gateway](https://github.com/Kong/kong) | 44.3k | Apache-2.0 | AI plugins for the Kong API gateway: multi-provider proxying, token-based rate limiting, prompt guards and request/response logging. |
 | 🟢 [Higress](https://github.com/higress-group/higress) | 9.7k | Apache-2.0 | Envoy-based AI-native API gateway from Alibaba: provider routing, token rate limits, caching and OTel tracing for LLM traffic. |
-| 🟢 [Agent Router (Envoy AI Gateway)](https://github.com/theagentrouter/agent-router) | 2.3k | Apache-2.0 | Envoy Gateway extension for unified access to LLM providers with token-aware rate limiting and usage metrics. |
+| 🟢 [agentgateway](https://github.com/agentgateway/agentgateway) | 6.0k | Apache-2.0 | Rust proxy for agent traffic that understands MCP and A2A as well as LLM APIs; adds auth, rate limits and OTel metrics/traces per tool call. |
+| 🟢 [Agent Router (Envoy AI Gateway)](https://github.com/theagentrouter/agent-router) | 2.4k | Apache-2.0 | Envoy Gateway extension for unified access to LLM providers with token-aware rate limiting and usage metrics. |
 
 ## Instrumentation & Standards (OpenTelemetry GenAI)
 
@@ -250,6 +256,7 @@ Two things changed in 2025-26 that older tutorials miss: the GenAI conventions m
 | 🟢 [OTel Python Contrib](https://github.com/open-telemetry/opentelemetry-python-contrib) | 1.1k | Apache-2.0 | OTel instrumentation modules, including GenAI. |
 | 🟢 [OTel GenAI Semantic Conventions](https://github.com/open-telemetry/semantic-conventions-genai) | 506 | Apache-2.0 | The **GenAI semantic conventions** spec (`gen_ai.*` spans, metrics, events, agent and MCP conventions), now in its own repo with a Python reference implementation. |
 | 🟢 [OpenLLMetry-JS](https://github.com/traceloop/openllmetry-js) | 412 | Apache-2.0 | The TypeScript sibling of OpenLLMetry: OTel instrumentations for the OpenAI, Anthropic, Bedrock, LangChain and LlamaIndex Node SDKs. |
+| 🟢 [traceAI](https://github.com/future-agi/traceAI) | 266 | Apache-2.0 | OpenTelemetry instrumentations for LLM SDKs and agent frameworks across Python and TypeScript, exportable to any OTel backend (Future AGI). |
 
 ## Guardrails & Safety Monitoring
 
