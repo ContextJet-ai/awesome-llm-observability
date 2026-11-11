@@ -283,6 +283,7 @@ Two things changed in 2025-26 that older tutorials miss: the GenAI conventions m
 | 🟢 [Snyk Agent Scan](https://github.com/snyk/agent-scan) | 3.2k | Apache-2.0 | Security scanner for AI agents, MCP servers and agent skills (formerly Invariant Labs mcp-scan). |
 | 🟢 [Purple Llama](https://github.com/meta-llama/PurpleLlama) | 4.5k | mixed (Llama / MIT) | Meta's LLM security toolset: Llama Guard input/output classifiers, Prompt Guard for injection, and the CyberSecEval benchmarks. |
 | 🟠 [Necio](https://necio.app) | - | commercial | Scheduled black-box testing of deployed LLM apps and agents: sends prompt-injection, data-leakage and OWASP LLM Top 10 test conversations to a web chat, bot or API endpoint, grades each answer and flags behavioral drift against a stored baseline; no SDK, findings export to a SIEM (no OSS repo). |
+| 🟠 [ValGuard](https://valguard.ai/docs/getting-started) | - | commercial | Hosted validation layer that checks LLM and agent responses and tool calls against deterministic rules (JSON schemas, tool-call allowlists, PII checks, token and cost budgets) before downstream code uses them; shadow mode and a free tier. |
 
 ## Agent Harness & Context
 
