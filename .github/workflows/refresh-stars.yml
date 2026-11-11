@@ -1,7 +1,7 @@
 name: refresh-stars
+# The main ruleset blocks the Actions bot from pushing, so the weekly refresh now runs
+# from the maintainer's machine and lands as a PR. This stays for manual dry runs.
 on:
-  schedule:
-    - cron: "0 6 * * 1"
   workflow_dispatch:
 permissions:
   contents: write

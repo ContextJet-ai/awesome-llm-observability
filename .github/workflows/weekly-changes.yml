@@ -1,0 +1,29 @@
+name: weekly-changes
+on:
+  schedule:
+    - cron: "0 9 * * 1"
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Publish a release if the list changed this week
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          since=$(git tag --sort=-creatordate | head -1)
+          python tools/weekly_changes.py "$since" > notes.md
+          if [ ! -s notes.md ] || ! grep -q '[^[:space:]]' notes.md; then
+            echo "no changes since $since"; exit 0
+          fi
+          printf '\nFull diff: https://github.com/${{ github.repository }}/compare/%s...weekly-%s\n' "$since" "$(date -u +%F)" >> notes.md
+          gh release create "weekly-$(date -u +%F)" --target "$GITHUB_SHA" \
+            --title "What changed: week of $(date -u +'%b %-d, %Y')" --notes-file notes.md
