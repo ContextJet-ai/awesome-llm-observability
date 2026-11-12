@@ -294,6 +294,7 @@ Not observability tools themselves. These sit inside the agent loop and change w
 | 🟢 [agent-browser](https://github.com/vercel-labs/agent-browser) | 49.1k | Apache-2.0 | Browser automation CLI for agents (Vercel Labs); each navigation, click and snapshot is a tool call to trace. |
 | 🟢 [agent-desktop](https://github.com/vercel-labs/agent-desktop) | 21.3k | Apache-2.0 | Computer-use CLI for agents (Vercel Labs), the desktop counterpart to agent-browser. |
 | 🟢 [billion-context](https://github.com/ranxianglei/billion-context) | 6.2k | MIT | Context-compression plugin for very long sessions. It claims about 5x fewer tokens, but no benchmark has been published, so measure it against your own traces. |
+| 🟢 [ClickHouse Loom](https://github.com/ClickHouse/loom) | 8 | Apache-2.0 | Self-hosted shared memory, document search and code index for agents (MCP), stored in ClickHouse. Each memory write leaves an audit row, and a run records the memories the agent recalled and wrote, so what an agent was given is queryable with SQL next to its traces. |
 
 Related collections: [google/skills](https://github.com/google/skills) and [scenario-labs/skills](https://github.com/scenario-labs/skills) are agent-skill packs for other domains, useful as a reference for how skill collections are laid out.
 
