@@ -330,6 +330,7 @@ The tooling above is grounded in a fast-moving literature. Key anchors:
 - Applied LLMs - [*What We've Learned From A Year of Building with LLMs*](https://applied-llms.org/) - six practitioners' operational lessons, including why evals and tracing are where most teams under-invest.
 - Chip Huyen - [*Building LLM applications for production*](https://huyenchip.com/2023/04/11/llm-engineering.html).
 - Loop & Retry - [*Measuring agent failure in production*](https://loopandretry.github.io/posts/measuring-agent-failure-in-production/) - which signals actually surface a broken agent in prod, and why request-level success rates hide the failures that matter.
+- [How to make AI evals cheaper (Slancha)](https://github.com/SlanchaAI/eval-cost-playbook) - Two levers for cheaper evals: run fewer of them, or make each one cheaper, including gap prediction.
 
 ## Guides & Tools (Original)
 
