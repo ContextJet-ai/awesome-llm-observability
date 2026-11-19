@@ -213,6 +213,7 @@ Test and score LLM/agent output. One thing to sort out before you pick a tool: a
 | 🟠 [Galileo](https://github.com/rungalileo/galileo-python) | SDK | Apache-2.0 | Eval + observability platform; SDK OSS, platform commercial. |
 | 🟠 [Openlayer](https://github.com/openlayer-ai/openlayer-python) | SDK | Apache-2.0 | Testing, eval & monitoring platform; SDK OSS, platform commercial. |
 | 🟠 [TestMu AI Agent Testing](https://www.testmuai.com/agent-testing/) | - | commercial | Tests chat, voice and phone agents with simulated conversations and real phone calls; validates tool calls from Vapi, Retell, ElevenLabs and Agentforce. |
+| 🟠 [Attify](https://attify.app/docs) | - | Proprietary | Audits production AI agent outcomes (e.g. support resolutions) against the customer's own records under a published standard (attify.app/standards). |
 
 ## Prompt Management & Experimentation
 
