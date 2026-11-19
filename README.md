@@ -153,6 +153,7 @@ End-to-end tracing + dashboards for LLM/RAG/agent apps.
 | 🟢 [Microsoft PromptFlow](https://github.com/microsoft/promptflow) | 11.3k | MIT | Build, test, deploy & monitor LLM apps end-to-end. |
 | 🟢 [Arize Phoenix](https://github.com/Arize-ai/phoenix) | 12.2k | Elastic v2 | OpenTelemetry-native AI observability & evaluation; runs locally or self-hosted. |
 | 🟢 [Helicone](https://github.com/Helicone/helicone) | 6.3k | Apache-2.0 | One-line **proxy** observability - change the base URL, log every request/cost/error. |
+| 🟢 [Uncoil](https://github.com/Uncoil-dev/Uncoil) | 5 | MIT | Agent tracing: every model call, tool call, retry and cost of a run as one trace, with TypeScript and Python SDKs and OpenTelemetry ingest; hosted free plan. |
 | 🟢 [Coze Loop](https://github.com/coze-dev/coze-loop) | 5.8k | Apache-2.0 | Agent development and ops platform from ByteDance's Coze team: prompt debugging, evaluation sets, trace observation and monitoring. |
 | 🟢 [Latitude](https://github.com/latitude-dev/latitude-llm) | 4.7k | MIT | Open-source LLM monitoring + prompt-engineering platform. |
 | 🟢 [Laminar](https://github.com/lmnr-ai/lmnr) | 3.5k | Apache-2.0 | Open-source observability + evals, purpose-built for AI agents. |
